@@ -1,18 +1,18 @@
-# Nome do projeto
+# Trade.it
 
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+O objetivo do projeto Trade.it é elaborar um sistema e-commerce de trocas, focando em intermediar a troca direta de produtos entre clientes, apresentando um ambiente provido de ferramentas e funções necessárias para tornar o processo ágil e assertivo.  
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Álvaro Augusto Souza do Carmo
+* Artur César Silva do Carmo
+* Raffael Gustavo Oliveira Pedroso
+* Luiz Otávio Chaves Carvalho
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Marco Paulo Soares Gomes
+* Joyce Christina de Paiva
 
 ## Instruções de utilização
 
