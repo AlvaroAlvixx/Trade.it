@@ -8,6 +8,7 @@ O objetivo do projeto Trade.it é elaborar um sistema e-commerce de trocas, foca
 * Artur César Silva do Carmo
 * Raffael Gustavo Oliveira Pedroso
 * Luiz Otávio Chaves Carvalho
+* Gustavo Henrique Barbosa Oliveira
 
 ## Professores responsáveis
 
