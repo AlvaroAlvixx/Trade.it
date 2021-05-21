@@ -1,3 +1,7 @@
+body{
+    background-color: #E7E7E7 !important;
+}
+
 header{
     background-color: rgb(51, 51, 51);
     padding: 15px;
@@ -10,6 +14,7 @@ fieldset{
 main{
     background-color: #E7E7E7;
     padding-bottom: 50px;
+    position: static;
 }
 
 footer{
@@ -121,6 +126,11 @@ footer{
     max-width: 80px;
     border-radius: 100px;
 }
+
+footer{
+    bottom: 0;
+    width: 100%;
+}
   
 footer b{
     color: white;
@@ -137,4 +147,11 @@ footer b{
     background-color: white;
     padding: 50px;
     padding-bottom: 50px;
+}
+
+
+/*ELEMENTOS EXCLUSIVO DE PÁGINA DE LOGIN*/
+
+.btnLogin button{
+    width: 100% !important;
 }
