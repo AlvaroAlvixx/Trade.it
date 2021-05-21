@@ -1,0 +1,45 @@
+.divAreaPesquisa{
+    background-color: white;
+}
+
+/* ÁREA DAS CATEGORIAS */
+.divAreaPesquisa h4{
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.divCategorias div{
+    margin-left: 15px;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.divAreaCategoria{
+    border-radius: 5px;
+    margin-right: 50px;
+    margin-top: 15px !important;
+    padding-left: 20px !important;
+    padding-bottom: 20px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+.divAreaCategoria p{
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    margin: 0 !important;
+    font-size: 22px;
+}
+
+/* ÁREA DAS IMAGENS */
+
+.divAreaProdutos{
+    margin-top: 25px;
+    padding-left: 0 !important;
+}
+
+.divImg{
+    padding: 15px !important;
+}
+
