@@ -20,7 +20,6 @@ session_start();
 </head>
 
 <body>
-
     <header>
         <div class="row">
             <div class="col-12">
@@ -75,18 +74,8 @@ session_start();
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                
-                                
-                                <?php  if(isset($_SESSION['email'])):?>
-                                    <p>
-                                    <?php echo ($_SESSION['email']);?>
-                                    </p>
-                                    <a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
-                                <?php else: ?>
-                                    <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
-                                    <a class="nav-link" href="cadastro.php">Cadastrar<span class="sr-only"></span></a>
-                                <?php endif; ?>
-                                
+                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
                             </form>
                         </div>
                     </nav>

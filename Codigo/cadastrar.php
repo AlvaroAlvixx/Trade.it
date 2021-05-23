@@ -1,6 +1,7 @@
 <?php 
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,6 +20,7 @@ session_start();
 </head>
 
 <body>
+
     <header>
         <div class="row">
             <div class="col-12">
@@ -82,51 +84,119 @@ session_start();
             </div>
         </div>
     </header>
+
     <main style="padding-top: 50px;">
         <div class="container">
-            <form action="login.php" method="POST">
+            <?php  
+            if(isset($_SESSION['senha_incorreta'])):
+            ?>
+                <div> 
+                    <h5>Senhas estão divergentes.</h5>
+                </div>
+            <?php 
+            endif;
+            unset($_SESSION['senha_incorreta']);
+            ?>
+
+            <?php  
+            if(isset($_SESSION['usuario_existe'])):
+            ?>
+                <div> 
+                    <h5>Usuário já cadastrado.</h5>
+                </div>
+            <?php 
+            endif;
+            unset($_SESSION['usuario_existe']);
+            ?>
+
+            <?php  
+            if(isset($_SESSION['status_cadastro'])):
+            ?>
+                <div> 
+                    <h5>Cadastro realizado com sucesso.</h5>
+                </div>
+            <?php 
+            endif;
+            unset($_SESSION['status_cadastro']);
+            ?>
+
+            <form action="register.php" method="POST">
                 <div class="divCadastro">
-                    <div class="form-row">
-                        <div class="col-md-3"></div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail">Email</label>
-                            <input name="email" type="text" class="form-control" id="inputEmail">
-                        </div>
-                        <div class="col-md-3"></div>
+                    <div class="form-group">
+                        <label for="inputNome">Nome Completo</label>
+                        <input name="nome" type="text" class="form-control" id="inputNome">
                     </div>
                     <div class="form-row">
-                        <div class="col-md-3"></div>
+                        <div class="form-group col-md-9">
+                            <label for="inputCPF">CPF</label>
+                            <input name="cpf" type="number" class="form-control" id="inputCPF" maxlenght="11">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputNascimento">Data Nascimento</label>
+                            <input name="nascimento" type="date" class="form-control" id="inputNascimento">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input name="email" type="email" class="form-control" id="inputEmail">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="inputCEP">CEP</label>
+                            <input name="cep" type="number" class="form-control" id="inputCEP" maxlenght="8">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-9">
+                            <label for="inputLogradouro">Logradouro</label>
+                            <input name="logradouro" type="text" class="form-control" id="inputLogradouro">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputNumero">Número</label>
+                            <input name="numero" type="number" class="form-control" id="inputNumero">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputBairro">Bairro</label>
+                            <input name="bairro" type="text" class="form-control" id="inputBairro">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputCidade">Cidade</label>
+                            <input name="cidade" type="text" class="form-control" id="inputCidade">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPais">País</label>
+                            <input tname="pais" ype="text" class="form-control" id="inputPais">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputSenha">Senha</label>
                             <input name="senha" type="password" class="form-control" id="inputSenha">
                         </div>
-                        <div class="col-md-3"> </div>
                     </div>
-                    <br>
-                    <br>
                     <div class="form-row">
-                        <div class="col-md-5"></div>
-                        <div class="form-group col-md-2 btnLogin">
-                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        <div class="form-group col-md-6">
+                            <label for="inputSenhaConfirma">Confirme a senha</label>
+                            <input name="senhaConfirma" type="password" class="form-control" id="inputSenhaConfirma">
                         </div>
-                        <div class="col-md-5"></div>
                     </div>
-                    <?php  
-                    if(isset($_SESSION['nao_autenticado'])):
-                    ?>
-                        <div> 
-                            <h5>Email ou senha inválidos.</h5>
-                        </div>
-                    <?php 
-                    endif;
-                    unset($_SESSION['nao_autenticado']);
-                    ?>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
             </form>
         </div>
     </main>
 
-    <footer style="position: absolute !important; bottom: 0 !important; width: 100% !important;">
+    <footer>
         <div class="row">
             <div class="col-12">
                 <b>Trade.IT - Todos os direitos reservados - 2021</b>

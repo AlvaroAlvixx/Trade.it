@@ -9,13 +9,14 @@
     <script src="https://kit.fontawesome.com/c6addf5154.js" crossorigin="anonymous"></script>
     <title>Trade.it - anúncio</title>
 </head>
+
 <body>
     <header>
         <div class="row">
             <div class="col-12">
                 <div class="row">
                     <div class="col-3 divLogo">
-                        <a href="index.html"><img src="img/logoTrade.png" alt=""></a>
+                        <a href="index.php"><img src="img/logoTrade.png" alt=""></a>
                     </div>
                     <div class="col-6 divSearch">
 
@@ -64,8 +65,8 @@
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                <a class="nav-link" href="#">Entrar<span class="sr-only"></span></a>
-                                <a class="nav-link" href="cadastro.html">Cadastrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
                             </form>
                         </div>
                     </nav>

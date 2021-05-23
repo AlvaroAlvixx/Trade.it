@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="row">
             <div class="col-12">
@@ -72,8 +71,8 @@
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                <a class="nav-link" href="login.php">Entrar<span class="sr-only"></span></a>
-                                <a class="nav-link" href="cadastro.php">Cadastrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
                             </form>
                         </div>
                     </nav>
