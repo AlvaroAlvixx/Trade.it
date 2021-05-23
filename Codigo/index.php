@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -11,11 +11,10 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/c6addf5154.js" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="js/index.js"></script>
     <title>Trade.IT</title>
 </head>
 
@@ -30,10 +29,8 @@ session_start();
                     <div class="col-6 divSearch">
 
                         <form class="formSearch form-inline">
-                            <input class="inputSearch form-control mr-sm-2" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
-                                    class="fas fa-search"></i></button>
+                            <input class="inputSearch form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                         </form>
 
                     </div>
@@ -43,17 +40,14 @@ session_start();
                 </div>
                 <div class="divNavbar row">
                     <nav class="col-12 navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Categorias
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,12 +68,12 @@ session_start();
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                <?php  if(isset($_SESSION['email'])):?>
+                                <?php if (isset($_SESSION['email'])) : ?>
                                     <p>
-                                    <?php echo ($_SESSION['email']);?>
+                                        <?php echo ($_SESSION['email']); ?>
                                     </p>
                                     <a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
-                                <?php else: ?>
+                                <?php else : ?>
                                     <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
                                     <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
                                 <?php endif; ?>
@@ -124,13 +118,11 @@ session_start();
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -138,58 +130,12 @@ session_start();
                 </div>
             </div>
 
-            <div class="row divDestaque">
-                <div class="col-12">
-                    <h4>Destaques</h4>
-                </div>
+            <div class="col-12">
+                <h4>Destaques</h4>
+            </div>
 
-                <div class="col-2">
-                    <a href="">
-                        <div class="card  cardGeral">
-                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
-                        </div>
-                    </a>
-                </div>
+            <div id="divDestaque" class="row divDestaque">
 
-                <div class="col-2">
-                    <a href="">
-                        <div class="card  cardGeral">
-                            <img src="https://picsum.photos/1080?random=5" class="card-img-top" alt="...">
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-2">
-                    <a href="">
-                        <div class="card  cardGeral">
-                            <img src="https://picsum.photos/1080?random=4" class="card-img-top" alt="...">
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-2">
-                    <a href="">
-                        <div class="card  cardGeral">
-                            <img src="https://picsum.photos/1080?random=3" class="card-img-top" alt="...">
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-2">
-                    <a href="">
-                        <div class="card  cardGeral">
-                            <img src="https://picsum.photos/1080?random=2" class="card-img-top" alt="...">
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-2">
-                    <a href="">
-                        <div class="card  cardGeral">
-                            <img src="https://picsum.photos/1080?random=1" class="card-img-top" alt="...">
-                        </div>
-                    </a>
-                </div>
             </div>
 
             <div class="row divCategorias">
@@ -198,62 +144,62 @@ session_start();
                 </div>
 
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('games')">
                         <img src="img/Categorias/cat1.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('informatica')">
                         <img src="img/Categorias/cat2.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('celulares')">
                         <img src="img/Categorias/cat3.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('eletronicos')">
                         <img src="img/Categorias/cat4.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('casa')">
                         <img src="img/Categorias/cat5.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('eletrodomesticos')">
                         <img src="img/Categorias/cat6.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('esportes')">
                         <img src="img/Categorias/cat7.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('ferramentas')">
                         <img src="img/Categorias/cat8.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('moda')">
                         <img src="img/Categorias/cat10.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('brinquedos')">
                         <img src="img/Categorias/cat11.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('musica')">
                         <img src="img/Categorias/cat12.png" class="card-img-top" alt="...">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a class="aCategoria" href="">
+                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('antiguidades')">
                         <img src="img/Categorias/cat13.png" class="card-img-top" alt="...">
                     </a>
                 </div>
@@ -269,15 +215,8 @@ session_start();
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 
