@@ -111,6 +111,7 @@ session_start();
                         </div>
                         <div class="col-md-5"></div>
                     </div>
+
                     <?php  
                     if(isset($_SESSION['nao_autenticado'])):
                     ?>
@@ -121,6 +122,18 @@ session_start();
                     endif;
                     unset($_SESSION['nao_autenticado']);
                     ?>
+
+                    <?php  
+                    if(isset($_SESSION['vazio'])):
+                    ?>
+                        <div> 
+                            <h5>Necessário preencher todos os campos.</h5>
+                        </div>
+                    <?php 
+                    endif;
+                    unset($_SESSION['vazio']);
+                    ?>
+
                 </div>
             </form>
         </div>

@@ -88,6 +88,17 @@ session_start();
     <main style="padding-top: 50px;">
         <div class="container">
             <?php  
+            if(isset($_SESSION['vazio'])):
+            ?>
+                <div> 
+                    <h5>Necessário preencher todos os campos.</h5>
+                </div>
+            <?php 
+            endif;
+            unset($_SESSION['vazio']);
+            ?>
+            
+            <?php  
             if(isset($_SESSION['senha_incorreta'])):
             ?>
                 <div> 

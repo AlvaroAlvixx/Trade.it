@@ -3,6 +3,7 @@ session_start();
 include('conexao.php');
 
 if(empty($_POST['email']) || empty($_POST['senha'])){
+    $_SESSION['vazio'] = true;
     header('Location: entrar.php');
     exit();
 }

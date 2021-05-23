@@ -14,6 +14,15 @@ $bairro = mysqli_real_escape_string($conexao, trim($_POST['bairro']));
 $cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
 $cep = mysqli_real_escape_string($conexao, trim($_POST['cep']));
 
+if(empty($_POST['cpf']) || empty($_POST['nome']) || empty($_POST['email'])
+|| empty($_POST['nascimento']) || empty($_POST['senha']) || empty($_POST['senhaConfirma'])
+|| empty($_POST['logradouro']) || empty($_POST['numero']) || empty($_POST['bairro'])
+|| empty($_POST['cidade']) || empty($_POST['cep'])){
+    $_SESSION['vazio'] = true;
+    header('Location: cadastrar.php');
+    exit();
+}
+
 $sql = "select count(*) as total from usuarios where email = '$email' or cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
