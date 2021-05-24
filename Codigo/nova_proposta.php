@@ -11,12 +11,13 @@
     <title>Nova proposta - Trade.it</title>
 </head>
 <body>
+
     <header>
         <div class="row">
             <div class="col-12">
                 <div class="row">
                     <div class="col-3 divLogo">
-                        <a href="index.php"><img src="img/logoTrade.png" alt=""></a>
+                        <a href="index.html"><img src="img/logoTrade.png" alt=""></a>
                     </div>
                     <div class="col-6 divSearch">
 
@@ -65,8 +66,8 @@
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
-                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="#">Entrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="cadastro.html">Cadastrar<span class="sr-only"></span></a>
                             </form>
                         </div>
                     </nav>
@@ -75,15 +76,23 @@
         </div>
     </header>
 
-    <main>
+    <main>     
         <div class="container divNovaProposta">
-            <div class="row divConteudo">
-                <div class="col-12">
-                    <h3>Anúncio: </h3> <h3 id="nomeAnuncio"></h3>
+            <div class="row divConteudo"> 
+
+                <div class="col-12 titulo">
+                    <h3>Propor troca </h3>
                 </div>
 
                 <div>                    
                     <div class="col-12">
+
+                        <div class="row">
+                            <div class="col-12 nomeAnuncio">
+                                <h5>Anúncio: </h5> <h5 id="nomeAnuncio"></h5>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-10 divInformacao">
                                 <div class="row">
@@ -101,7 +110,7 @@
                             <div class="col-2 divImagem">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card  cardGeral imagem">
+                                        <div class="card  cardGeral">
                                             <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
                                         </div>
                                     </div>
@@ -116,47 +125,51 @@
                                         <div class="divFazerProposta">
                                             <form>                                            
                                                 <div class="form-group col-12">
-                                                    <label for="produto">Produto</label>
+                                                    <label for="produto" class="lblTitulo">Produto</label>
                                                     <input type="text" class="form-control" id="produto">
                                                 </div>
                                                 <div class="form-group col-12">
-                                                    <label for="descricao">Condição do produto</label>
+                                                    <label for="descricao" class="lblTitulo">Condição do produto</label>
                                                     <input type="text" class="form-control" id="descricao">
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="row">
                                                         <div class="form-group col-8">
-                                                            <label for="mensagem">Mensagem ao ofertante</label>
+                                                            <label for="mensagem" class="lblTitulo">Mensagem ao ofertante</label>
                                                             <textarea class="form-control" id="mensagem" rows="3"></textarea>
                                                           </div>
                                                         <div class="form-group col-4">
-                                                            <label for="condicao">Condições do produto</label>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" name="rdNovo" id="rdNovo" value="option1">
-                                                                <label class="form-check-label" for="rdNovo">
-                                                                  Novo
-                                                                </label>
-                                                              </div>
-                                                              <div class="form-check">
-                                                                <input class="form-check-input" type="radio" name="rdUsadoNovo" id="rdUsadoNovo" value="option2">
-                                                                <label class="form-check-label" for="rdUsadoNovo">
-                                                                  Usado (como novo)
-                                                                </label>
-                                                              </div>
-                                                              <div class="form-check disabled">
-                                                                <input class="form-check-input" type="radio" name="rdUsadoAceitavel" id="rdUsadoAceitavel" value="option3">
-                                                                <label class="form-check-label" for="rdUsadoAceitavel">
-                                                                    Usado (aceitável)
-                                                                </label>
-                                                              </div>  
-                                                        </div>
+
+                                                            <fieldset class="fieldsetCondicoes">
+                                                                <legend><label for="condicao" class="lblTitulo">Condições do produto</label></legend>
+
+
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="radio" id="rdNovo" value="novo">
+                                                                    <label class="form-check-label" for="rdNovo">
+                                                                      Novo
+                                                                    </label>
+                                                                  </div>
+                                                                  <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="radio" id="rdUsadoNovo" value="usado/novo">
+                                                                    <label class="form-check-label" for="rdUsadoNovo">
+                                                                      Usado (como novo)
+                                                                    </label>
+                                                                  </div>
+                                                                  <div class="form-check disabled">
+                                                                    <input class="form-check-input" type="radio" name="radio" id="rdUsadoAceitavel" value="usado/aceitavel">
+                                                                    <label class="form-check-label" for="rdUsadoAceitavel">
+                                                                        Usado (aceitável)
+                                                                    </label>
+                                                                  </div>  
+                                                            </fieldset>                                                            
                                                     </div>                                                    
                                                 </div>    
                                                 <div>
                                                     <div class="col-12">
                                                         <div class="row">
-                                                            <div class="col-4">
-                                                                <button id="btnCarregar" type="submit" class="btn btn-primary btnCarregar">Carregar foto</button>
+                                                            <div class="col-4">                                                                
+                                                                <button id="btnCarregar" type="file" class="btn btn-primary btnCarregar" multiple>Carregar foto</button>                                                            
                                                             </div>
                                                             <div class="col-8">
                                                                 <label for="btnCarregar" id="lblCarregar">aaaa </label>
@@ -166,13 +179,12 @@
                                                 </div>
                                                 <div class="divBtnProposta">  
                                                     <button id="btnProposta" type="submit" class="btn btn-primary btnProposta">Enviar proposta</button>
-                                                </div>
+                                                </div>                                                
                                             </form>
                                         </div>  
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
