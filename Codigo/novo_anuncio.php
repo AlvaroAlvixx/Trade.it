@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="row">
             <div class="col-12">
@@ -71,8 +72,8 @@
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
-                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="login.php">Entrar<span class="sr-only"></span></a>
+                                <a class="nav-link" href="cadastro.php">Cadastrar<span class="sr-only"></span></a>
                             </form>
                         </div>
                     </nav>
@@ -115,27 +116,31 @@
                         <div class="col-md-5">
                             <fieldset class="fieldsetAnuncio fieldsetCondicoes">
                                 <legend class="fieldsetAnuncio">Condições do produto</legend>
-                                <div class="form-check divRadioCondicoes">
-                                    <input class="form-check-input" type="radio" name="condicaoNovo" id="condicaoNovo"
-                                        value="Novo">
-                                    <label class="form-check-label labelRadio" for="condicaoNovo">
-                                        Novo
-                                    </label>
-                                </div>
-                                <div class="form-check divRadioCondicoes">
-                                    <input class="form-check-input" type="radio" name="condicaoUsado01"
-                                        id="condicaoUsado01" value="usadoNovo">
-                                    <label class="form-check-label labelRadio" for="condicaoUsado01">
-                                        Usado (Como Novo)
-                                    </label>
-                                </div>
-                                <div class="form-check divRadioCondicoes">
-                                    <input class="form-check-input" type="radio" name="condicaoUsado02"
-                                        id="condicaoUsado02" value="usadoAceitavel">
-                                    <label class="form-check-label labelRadio" for="condicaoUsado02">
-                                        Usando (Aceitável)
-                                    </label>
-                                </div>
+                                <form action="">
+
+                                    <div class="form-check divRadioCondicoes">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="radioNovo"
+                                            value="Novo">
+                                        <label class="form-check-label labelRadio" for="radioNovo">
+                                            Novo
+                                        </label>
+                                    </div>
+                                    <div class="form-check divRadioCondicoes">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="radioUsadoNovo" value="UsadoNovo">
+                                        <label class="form-check-label labelRadio" for="radioUsadoNovo">
+                                            Usado (Como Novo)
+                                        </label>
+                                    </div>
+                                    <div class="form-check divRadioCondicoes">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="radioUsadoAceita" value="UsadoAceita">
+                                        <label class="form-check-label labelRadio" for="radioUsadoAceita">
+                                            Usado (Aceitável)
+                                        </label>
+                                    </div>
+
+                                </form>
                             </fieldset>
                         </div>
 
@@ -143,101 +148,99 @@
                         <div class="col-md-7">
                             <fieldset class="fieldsetAnuncio">
                                 <legend class="fieldsetAnuncio">Categorias</legend>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat01">
-                                            <label class="form-check-label labelRadio" for="cat01">
-                                                Categoria
-                                            </label>
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat01">
+                                                <label class="form-check-label labelRadio" for="cat01">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat02">
+                                                <label class="form-check-label labelRadio" for="cat02">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat03">
+                                                <label class="form-check-label labelRadio" for="cat03">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat04">
+                                                <label class="form-check-label labelRadio" for="cat04">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat05">
+                                                <label class="form-check-label labelRadio" for="cat05">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat06">
+                                                <label class="form-check-label labelRadio" for="cat06">
+                                                    Categoria
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat02">
-                                            <label class="form-check-label labelRadio" for="cat02">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat03">
-                                            <label class="form-check-label labelRadio" for="cat03">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat04">
-                                            <label class="form-check-label labelRadio" for="cat04">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat05">
-                                            <label class="form-check-label labelRadio" for="cat05">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat06">
-                                            <label class="form-check-label labelRadio" for="cat06">
-                                                Categoria
-                                            </label>
+                                        <div class="col-md-6">
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat07">
+                                                <label class="form-check-label labelRadio" for="cat07">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat08">
+                                                <label class="form-check-label labelRadio" for="cat08">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat09">
+                                                <label class="form-check-label labelRadio" for="cat09">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat10">
+                                                <label class="form-check-label labelRadio" for="cat10">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat11">
+                                                <label class="form-check-label labelRadio" for="cat11">
+                                                    Categoria
+                                                </label>
+                                            </div>
+                                            <div class="form-check divRadioCondicoes">
+                                                <input class="form-check-input" type="checkbox" value="" id="cat12">
+                                                <label class="form-check-label labelRadio" for="cat12">
+                                                    Categoria
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat07">
-                                            <label class="form-check-label labelRadio" for="cat07">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat08">
-                                            <label class="form-check-label labelRadio" for="cat08">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat09">
-                                            <label class="form-check-label labelRadio" for="cat09">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat10">
-                                            <label class="form-check-label labelRadio" for="cat10">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat11">
-                                            <label class="form-check-label labelRadio" for="cat11">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                        <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="" id="cat12">
-                                            <label class="form-check-label labelRadio" for="cat12">
-                                                Categoria
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                             </fieldset>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-4">
-                            <button id="btnCarregar" type="submit" class="btn btn-primary btnCarregar">Carregar
-                                foto</button>
-                        </div>
-                        <div class="col-8">
-                            <label for="btnCarregar" id="lblCarregar">aaaa </label>
+                            <input id="CarregarImg" type="file" class="">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12 divBtnCriar">
-                            <button type="submit" class="btn btn-primary">Adicionar Anúncio</button>
+                            <button type="file" class="btn btn-primary">Adicionar Anúncio</button>
                         </div>
                     </div>
 
