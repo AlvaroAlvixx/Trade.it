@@ -1,0 +1,65 @@
+body{
+    background-color: #E7E7E7 !important;
+}
+
+.divPropostaTroca{
+    background-color: white !important;
+    border-radius: 5px;    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.divConteudo{
+    padding: 15px;
+}
+
+.titulo{
+    background-color:  #E7E7E7 !important;
+    margin-top: 10px;
+}
+
+.titulo h3{
+    margin: 0px !important;
+    padding-top: 10px;
+}
+
+.nomeAnuncio{
+    margin-top: 15px;
+}
+
+.descricao{
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.decricaoProposta{
+    text-align: justify;
+    margin-top: 20px;
+}
+
+
+.fieldsetProposta{
+    border: 1px solid rgb(207, 207, 207) !important;
+    padding: 10px !important;
+    margin: 0 0 30px 0;
+    height: auto;
+} 
+
+.fieldsetProposta legend{
+    border: none;
+    width: auto;
+}
+
+.divInformacaoPrposta{
+    padding-left: 40px !important;
+}
+
+.topicosProposta{
+    font-weight: bold;
+}
+
+.divBotoesResponderProposta{
+    display: block;
+    margin-left: auto;
+}

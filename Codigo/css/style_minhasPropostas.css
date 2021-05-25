@@ -1,0 +1,76 @@
+body{
+    background-color: #E7E7E7 !important;
+}
+
+main{
+    background-color: #E7E7E7;
+    padding-bottom: 50px;
+}  
+
+.containerMinhasPropostas{
+	background-color: white !important;
+    border-radius: 5px;    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.divConteudo{
+    padding: 15px;
+}
+
+.titulo{
+    background-color:  #E7E7E7 !important;
+    margin-top: 10px;
+}
+
+.titulo h3{
+    margin: 0px !important;
+    padding-top: 10px;
+}
+
+.divMinhasPropostas{
+	padding: 10px 0px 10px 30px !important;
+}
+
+.fieldsetProposta{
+	border: 1px solid rgb(207, 207, 207) !important;
+    padding: 10px 0px !important;
+    margin: 10px 0 0 0;
+    height: auto;
+	width: 97%;
+}
+
+.imagem img{
+	width: 100%;
+	display: table-cell;
+    text-align: center;
+    vertical-align: middle;	
+	padding: 0px 20px;
+}
+
+.infoProposta{
+	padding: 0px 50px !important;
+}
+
+.lblInfo{
+	font-weight: bold;
+}
+
+.divBtnVerificar{		
+    position:relative;
+    top:100%; 
+    left:15%;
+}
+
+.btnVerificarProposta{
+	width: 70%;
+    background: rgb(51, 51, 51) !important;
+    color: white !important;
+	border: none !important;
+}
+
+.infoProposta{
+	position: relative;               
+   top: 10%;                       
+}
