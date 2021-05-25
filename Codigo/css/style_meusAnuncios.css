@@ -29,6 +29,20 @@ main{
     padding-top: 10px;
 }
 
+.divBtnNovo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnNovoAnuncio{
+    width: 100%;
+    background: rgb(51, 51, 51) !important;
+    color: white !important;
+    border-color: rgb(51, 51, 51) !important;
+}
+
+
 .divMeusAnuncios{
 	padding: 10px 30px !important;
 }
@@ -65,8 +79,7 @@ main{
     margin-left: auto;
 }
 
-.btnExcluirAnuncio{
-	
+.btnExcluirAnuncio{	
     background: rgb(51, 51, 51) !important;
     color: white !important;
 	border: none !important;
