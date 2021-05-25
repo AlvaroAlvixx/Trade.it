@@ -81,7 +81,14 @@
 			<div class="row divConteudo">
 
                 <div class="col-12 titulo">
-                    <h3>Meus anúncios</h3> <h3 id="nomeAnuncio"></h3>
+                    <div class="row">
+                        <div class="col-10">
+                            <h3>Meus anúncios</h3> <h3 id="nomeAnuncio"></h3>
+                        </div>
+                        <div class="col-2 divBtnNovo">       
+                            <button id="btnNovoAnuncio" type="submit" class="btn btn-primary btnNovoAnuncio">Novo anúncio</button>
+                        </div>
+                    </div>                    
                 </div>
 
 				<div class="col-12">										
