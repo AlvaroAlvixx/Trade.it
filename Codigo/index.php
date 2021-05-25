@@ -57,15 +57,23 @@ session_start();
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Meus anúncios <span class="sr-only"></span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Minhas propostas <span class="sr-only"></span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
-                                </li>
+
+                                <?php if (isset($_SESSION['email'])) : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Meus anúncios <span class="sr-only"></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Minhas propostas <span class="sr-only"></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
+                                    </li>
+                                <?php else : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
+                                    </li>
+                                <?php endif; ?>
+
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
                                 <?php if (isset($_SESSION['email'])) : ?>
