@@ -88,12 +88,25 @@ footer{
     border-radius: 5px;
 }
 
-.divDestaque{
+.destaque{
     background-color: white !important;
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 0px !important;
 }
+
+.destaque h4{
+    margin: 10px 0px 20px 0px;
+}
+
+.containerDestaque{
+    padding: 0px !important;
+    border-radius: 5px !important;
+}
+
+.divDestaque{
+    margin: 0px !important;
+}
+
+
 
 .divCategorias{
     background-color: white !important;

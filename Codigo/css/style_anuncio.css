@@ -73,10 +73,21 @@ main{
     color: white !important;
 }
 
-.destaques{
+.destaque{
     background-color: white !important;
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 0px !important;
+}
+
+.destaque h4{
+    margin-top: 10px;
+}
+
+.containerDestaque{
+    padding: 0px !important;
     margin-top: 20px;
+    border-radius: 5px !important;
+}
+
+.divDestaque{
+    margin: 0px !important;
 }
