@@ -12,7 +12,9 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_anuncio.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/c6addf5154.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/anuncio.js"></script>
     <title>Trade.it - anúncio</title>
 </head>
 
@@ -55,19 +57,34 @@ session_start();
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Meus anúncios <span class="sr-only"></span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Minhas propostas <span class="sr-only"></span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
-                                </li>
+
+                                <?php if (isset($_SESSION['email'])) : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Meus anúncios <span class="sr-only"></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Minhas propostas <span class="sr-only"></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
+                                    </li>
+                                <?php else : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
+                                    </li>
+                                <?php endif; ?>
+
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
-                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
+                                <?php if (isset($_SESSION['email'])) : ?>
+                                    <p>
+                                        <?php echo ($_SESSION['email']); ?>
+                                    </p>
+                                    <a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
+                                <?php else : ?>
+                                    <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
+                                <?php endif; ?>
                             </form>
                         </div>
                     </nav>
@@ -80,40 +97,26 @@ session_start();
         <div class="container divAnuncio">
             <div class="row ">
                 <div class="col-12">
-                    <h3>Anúncio</h3>
+                    <h3><b>Anúncio</b></h3>
                 </div>
 
                 <div>
                     <div class="col-12 ">
                         <div class="row">
-                            <div class="col-6 divImagens">
+                            <div class="col-4 divImagens">
                                 <div class="row">
-                                    <div class="col-2">
-                                        <div class="card  cardGeral">
-                                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
-                                        </div>
-                                        <div class="card  cardGeral">
-                                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
-                                        </div>
-                                        <div class="card  cardGeral">
-                                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
-                                        </div>
-                                        <div class="card  cardGeral">
-                                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
-                                        </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="card  cardGeral">
-                                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
+                                    <div class="col-12">
+                                        <div class="card  cardGeral" id="id_imagem">
+                                            <img src="https://picsum.photos/1080" class="card-img-top">
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-6 divInformacoes">
+                            <div class="col-8 divInformacoes">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div>
+                                        <div id="id_titulo">
                                             <h4>Título</h4>
                                         </div>
                                         <div class="condicoes">
@@ -136,7 +139,8 @@ session_start();
                                                         <input class="form-control mr-sm-2 inputCep" type="text">
                                                     </div>
                                                     <div class="col-3 divBtnCep">
-                                                        <button type="button" class="btn btn-light btnCep">Calcular</button>
+                                                        <button type="button" class="btn btn-light btnCep" onclick="frete()">Calcular</button>
+                                                        <p id="pFrete"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -180,53 +184,8 @@ session_start();
                     <div class="col-12">
                         <h4>Destaques</h4>
                     </div>
+                    <div id="divDestaque" class="row divDestaque">
 
-                    <div class="col-2">
-                        <a href="">
-                            <div class="card  cardGeral">
-                                <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-2">
-                        <a href="">
-                            <div class="card  cardGeral">
-                                <img src="https://picsum.photos/1080?random=5" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-2">
-                        <a href="">
-                            <div class="card  cardGeral">
-                                <img src="https://picsum.photos/1080?random=4" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-2">
-                        <a href="">
-                            <div class="card  cardGeral">
-                                <img src="https://picsum.photos/1080?random=3" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-2">
-                        <a href="">
-                            <div class="card  cardGeral">
-                                <img src="https://picsum.photos/1080?random=2" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-2">
-                        <a href="">
-                            <div class="card  cardGeral">
-                                <img src="https://picsum.photos/1080?random=1" class="card-img-top" alt="...">
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -241,7 +200,6 @@ session_start();
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
