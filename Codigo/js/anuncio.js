@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    $.post('anuncio_destaques.php', function (retorna) {
-        //$("#divDestaque").html(retorna);
+    $.post('php/anuncio_destaques.php', function (retorna) {
         let retornou = retorna;
         if (retornou == "") {
             $("#divDestaque").html("Nenhum anúncio encontrado");
@@ -29,7 +28,7 @@ $(document).ready(function () {
 
     });
 
-    $.post('anuncio_dados.php', function (retorna) {
+    $.post('php/anuncio_dados.php', function (retorna) {
         let retornou = retorna;
         let valor = [];
         valor = (retornou.split("|"));

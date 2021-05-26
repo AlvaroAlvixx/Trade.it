@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    $.post('index_destaques.php', function (retorna) {
-        //$("#divDestaque").html(retorna);
+    $.post('php/index_destaques.php', function (retorna) {
         let retornou = retorna;
         if (retornou == "") {
             $("#divDestaque").html("Nenhum anúncio encontrado");
