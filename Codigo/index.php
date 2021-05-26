@@ -80,7 +80,7 @@ session_start();
                                     <p>
                                         <?php echo ($_SESSION['email']); ?>
                                     </p>
-                                    <a class="nav-link" href="php/logout.php">Sair<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
                                 <?php else : ?>
                                     <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
                                     <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
@@ -137,15 +137,24 @@ session_start();
                     </div>
                 </div>
             </div>
-
+        </div>         
+        
+        <div class="container containerDestaque">  
             <div class="col-12">
-                <h4>Destaques</h4>
-            </div>
+                <div class="row destaque">
+                    <div class="col-12">
+                        <h4>Destaques</h4>
+                    </div>
 
-            <div id="divDestaque" class="row divDestaque">
+                    <div id="divDestaque" class="row divDestaque">
 
-            </div>
+                    </div>
+                </div>
+            </div> 
+            
+        </div>
 
+        <div class="container">
             <div class="row divCategorias">
                 <div class="col-12">
                     <h4>Categorias</h4>

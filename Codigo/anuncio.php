@@ -80,7 +80,7 @@ session_start();
                                     <p>
                                         <?php echo ($_SESSION['email']); ?>
                                     </p>
-                                    <a class="nav-link" href="php/logout.php">Sair<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
                                 <?php else : ?>
                                     <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
                                     <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
@@ -95,100 +95,97 @@ session_start();
 
     <main>
         <div class="container divAnuncio">
-            <div class="row ">
+            <div class="row">
                 <div class="col-12">
                     <h3><b>Anúncio</b></h3>
-                </div>
+                </div>      
 
-                <div>
-                    <div class="col-12 ">
-                        <div class="row">
-                            <div class="col-4 divImagens">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card  cardGeral" id="id_imagem">
-                                            <img src="https://picsum.photos/1080" class="card-img-top">
-                                        </div>
+                
+                <div class="col-12 ">
+                    <div class="row">
+                        <div class="col-4 divImagens">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card  cardGeral" id="id_imagem">
+                                        <img src="https://picsum.photos/1080" class="card-img-top">
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-8 divInformacoes">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div id="id_titulo">
-                                            <h4>Título</h4>
+                        <div class="col-8 divInformacoes">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="id_titulo">
+                                        <h4>Título</h4>
+                                    </div>
+                                    <div class="condicoes">
+                                        <h6>Condições: </h6>
+                                        <div id="id_condicao">
+                                            
                                         </div>
-                                        <div class="condicoes">
-                                            <h6>Condições: </h6>
-                                            <div id="id_condicao">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                            </div>
+                                    </div>
+                                    <div class="interesse">
+                                        <h6>Interesses de troca: </h6>
+                                        <div id="id_interesses">
+                                        
                                         </div>
-                                        <div class="interesse">
-                                            <h6>Interesses de troca: </h6>
-                                            <div id="id_interesses">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                            </div>
-                                        </div>
-                                        <div class="calcularCep">
-                                            <h6>Calcular frete: </h6>
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-8 divInputCep">
-                                                        <input class="form-control mr-sm-2 inputCep" type="text">
-                                                    </div>
-                                                    <div class="col-3 divBtnCep">
-                                                        <button type="button" class="btn btn-light btnCep" onclick="frete()">Calcular</button>
-                                                        <p id="pFrete"></p>
-                                                    </div>
+                                    </div>
+                                    <div class="calcularCep">
+                                        <h6>Calcular frete: </h6>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-8 divInputCep">
+                                                    <input class="form-control mr-sm-2 inputCep" type="text">
+                                                    <p id="pFrete"></p>
+                                                </div>
+                                                <div class="col-3 divBtnCep">
+                                                    <button type="button" class="btn btn-light btnCep" onclick="frete()">Calcular</button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
-                                        <div></div>
-                                    </div>
+                                    </div>                                    
                                 </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-6 descricao">
-                                <div class="row">
-                                    <div class="col-12 divDescricao">
-                                        <h6>Descrição: </h6>
-                                        <div id="id_descricao">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 divBtnTrocar">
-                                <button type="button" class="btn btn-light btnTrocar">Propor troca</button>
                             </div>
                         </div>
                     </div>
                 </div>
+               
+
+                
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-8 descricao">                                
+                            <h6>Descrição: </h6>
+                            <div id="id_descricao">
+                            
+                            </div>                                   
+                        </div>
+
+                        <div class="col-4 divBtnTrocar">                                
+                            <button type="button" class="btn btn-light btnTrocar">Propor troca</button> 
+                        </div>
+                    </div>
+                </div>
+                
+               
 
             </div>
         </div>
 
-        <div class="container">
-            <div>
-                <div class="row destaques">
+        <div class="container containerDestaque">  
+            <div class="col-12">
+                <div class="row destaque">
                     <div class="col-12">
                         <h4>Destaques</h4>
                     </div>
+
                     <div id="divDestaque" class="row divDestaque">
 
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </main>
 
