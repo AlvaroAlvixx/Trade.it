@@ -1,0 +1,46 @@
+main{
+    background-color: white !important;
+    margin: 30px 0 30px 0;
+    border-radius: 5px;
+}
+
+p{
+    font-size: 17px;
+}
+
+.slogan{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 500 ;
+}
+
+.subtitle{
+    font-size: 30px;
+    margin-left: 50px;
+    font-weight: 400 ;
+    margin-top: 50px;
+}
+
+.conteudo{
+    margin: 0 50px 0 50px;
+}
+
+.divEnquadramento{
+    padding: 20px 50px 0 50px;
+}
+
+.iconSocial{
+   font-size: 40px;
+   text-align: right;
+   padding: 0 !important;
+}
+
+.pSocial{
+    display: flex;
+    line-height: 60px !important;
+    padding: 0 0 0 5px !important;
+}
+
+.pSocial p{
+    font-size: 25px;
+}
