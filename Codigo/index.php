@@ -77,7 +77,7 @@ session_start();
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
                                 <?php if (isset($_SESSION['email'])) : ?>
-                                    <p>
+                                    <p class="logado">
                                         <?php echo ($_SESSION['email']); ?>
                                     </p>
                                     <a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
@@ -159,66 +159,161 @@ session_start();
                 <div class="col-12">
                     <h4>Categorias</h4>
                 </div>
-
+                <!-- games -->     
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('games')">
-                        <img src="img/Categorias/cat1.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('games')">  
+                                <img src="img/categorias/games.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Games</label>
+                    </div>                    
                 </div>
+                <!-- informatica -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('informatica')">
-                        <img src="img/Categorias/cat2.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('informatica')">  
+                                <img src="img/categorias/informatica.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Informática</label>
+                    </div>                    
                 </div>
+                <!-- celulares -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('celulares')">
-                        <img src="img/Categorias/cat3.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('celulares')">  
+                                <img src="img/categorias/celulares.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Celulares</label>
+                    </div>                    
                 </div>
+                <!-- eletronicos -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('eletronicos')">
-                        <img src="img/Categorias/cat4.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('eletronicos')">  
+                                <img src="img/categorias/eletronico.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Eletrônicos</label>
+                    </div>                    
                 </div>
+                <!-- casa -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('casa')">
-                        <img src="img/Categorias/cat5.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('casa')">  
+                                <img src="img/categorias/casa.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Casa</label>
+                    </div>                    
                 </div>
+                <!-- eletrodomesticos -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('eletrodomesticos')">
-                        <img src="img/Categorias/cat6.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('eletrodomesticos')">  
+                                <img src="img/categorias/eletrodomesticos.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Eletrodomésticos</label>
+                    </div>                    
                 </div>
+                <!-- esportes -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('esportes')">
-                        <img src="img/Categorias/cat7.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('esportes')">  
+                                <img src="img/categorias/esporte.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Esportes</label>
+                    </div>                    
                 </div>
+                <!-- ferramentas -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('ferramentas')">
-                        <img src="img/Categorias/cat8.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('ferramentas')">  
+                                <img src="img/categorias/ferramentas.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Ferramentas</label>
+                    </div>                    
                 </div>
+                <!-- moda -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('moda')">
-                        <img src="img/Categorias/cat10.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('moda')">  
+                                <img src="img/categorias/moda.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Moda</label>
+                    </div>                    
                 </div>
+                <!-- brinquedos -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('brinquedos')">
-                        <img src="img/Categorias/cat11.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('brinquedos')">  
+                                <img src="img/categorias/brinquedo.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Brinquedos</label>
+                    </div>                    
                 </div>
+                <!-- musica -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('musica')">
-                        <img src="img/Categorias/cat12.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('musica')">  
+                                <img src="img/categorias/musica.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Músicas</label>
+                    </div>                    
                 </div>
+                <!-- antiguidades -->
                 <div class="col-2">
-                    <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('antiguidades')">
-                        <img src="img/Categorias/cat13.png" class="card-img-top" alt="...">
-                    </a>
+                    <div class="row divImgCategoria">
+                        <div class="col-12">
+                            <a class="aCategoria" href="pesquisa.php" onclick="define_categoria('antiguidades')">  
+                                <img src="img/categorias/antiguidade.png" class="card-img-top imgCategoria" alt="..."> 
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row divTxtCategoria">
+                        <label>Antiguidades</label>
+                    </div>                    
                 </div>
             </div>
         </div>
