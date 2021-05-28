@@ -75,6 +75,10 @@ footer{
     padding-right: 15px;
 }
 
+.logado{
+    margin: 0px !important;
+}
+
 .divCarousel{
     margin-bottom: 15px;
     padding-top: 15px;
@@ -106,14 +110,23 @@ footer{
     margin: 0px !important;
 }
 
-
-
 .divCategorias{
     background-color: white !important;
     border-radius: 5px;
     margin-top: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.imgCategoria{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divTxtCategoria label{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cardGeral{
