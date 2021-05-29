@@ -1,6 +1,9 @@
 <?php
 session_start();
 ?>
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,85 +18,13 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/c6addf5154.js" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="js/pesquisa_dados.js"></script>
     <title>Trade.IT</title>
 </head>
 
 <body>
 
-    <header>
-        <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-3 divLogo">
-                        <a href="index.php"><img src="img/logoTrade.png" alt=""></a>
-                    </div>
-                    <div class="col-6 divSearch">
-
-                        <form class="formSearch form-inline">
-                            <input class="inputSearch form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
-
-                    </div>
-                    <div class="col-3 divSlogan">
-                        <h4>Aqui a catira é livre!</h4>
-                    </div>
-                </div>
-                <div class="divNavbar row">
-                    <nav class="col-12 navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Categorias
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-
-                                <?php if (isset($_SESSION['email'])) : ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Meus anúncios <span class="sr-only"></span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Minhas propostas <span class="sr-only"></span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
-                                    </li>
-                                <?php else : ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Sobre <span class="sr-only"></span></a>
-                                    </li>
-                                <?php endif; ?>
-
-                            </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                                <?php if (isset($_SESSION['email'])) : ?>
-                                    <p>
-                                        <?php echo ($_SESSION['email']); ?>
-                                    </p>
-                                    <a class="nav-link" href="php/logout.php">Sair<span class="sr-only"></span></a>
-                                <?php else : ?>
-                                    <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
-                                    <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
-                                <?php endif; ?>
-                            </form>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include("header.php"); ?>
 
     <main class="container" style="padding-top: 50px;">
 
@@ -179,37 +110,37 @@ session_start();
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="games" name="games">
+                                            <input class="form-check-input" type="checkbox" value="games" name="games" id="games">
                                             <label class="form-check-label labelRadio" for="games">
                                                 Games
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="informatica" name="informatica">
+                                            <input class="form-check-input" type="checkbox" value="informatica" name="informatica" id="informatica">
                                             <label class="form-check-label labelRadio" for="informatica">
                                                 Informática
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="celulares" name="celulares">
+                                            <input class="form-check-input" type="checkbox" value="celulares" name="celulares" id="celulares">
                                             <label class="form-check-label labelRadio" for="celulares">
                                                 Celulares
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="eletronicos" name="eletronicos">
+                                            <input class="form-check-input" type="checkbox" value="eletronicos" name="eletronicos" id="eletronicos">
                                             <label class="form-check-label labelRadio" for="eletronicos">
                                                 Eletrônicos
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="casa" name="casa">
+                                            <input class="form-check-input" type="checkbox" value="casa" name="casa" id="casa">
                                             <label class="form-check-label labelRadio" for="casa">
                                                 Casa e Móveis
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="eletrodomesticos" name="eletrodomesticos">
+                                            <input class="form-check-input" type="checkbox" value="eletrodomesticos" name="eletrodomesticos" id="eletrodomesticos">
                                             <label class="form-check-label labelRadio" for="eletrodomesticos">
                                                 Eletrodomésticos
                                             </label>
@@ -217,37 +148,37 @@ session_start();
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="esportes" name="esportes">
+                                            <input class="form-check-input" type="checkbox" value="esportes" name="esportes" id="esportes">
                                             <label class="form-check-label labelRadio" for="esportes">
                                                 Esportes e Fitness
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="ferramentas" name="ferramentas">
+                                            <input class="form-check-input" type="checkbox" value="ferramentas" name="ferramentas" id="ferramentas">
                                             <label class="form-check-label labelRadio" for="ferramentas">
                                                 Ferramentas
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="moda" name="moda">
+                                            <input class="form-check-input" type="checkbox" value="moda" name="moda" id="moda">
                                             <label class="form-check-label labelRadio" for="moda">
                                                 Moda
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="brinquedos" name="brinquedos">
+                                            <input class="form-check-input" type="checkbox" value="brinquedos" name="brinquedos" id="brinquedos">
                                             <label class="form-check-label labelRadio" for="brinquedos">
                                                 Brinquedos
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="musica" name="musica">
+                                            <input class="form-check-input" type="checkbox" value="musica" name="musica" id="musica">
                                             <label class="form-check-label labelRadio" for="musica">
                                                 Música
                                             </label>
                                         </div>
                                         <div class="form-check divRadioCondicoes">
-                                            <input class="form-check-input" type="checkbox" value="antiguidades" name="antiguidades">
+                                            <input class="form-check-input" type="checkbox" value="antiguidades" name="antiguidades" id="antiguidades">
                                             <label class="form-check-label labelRadio" for="antiguidades">
                                                 Antiguidades e Coleções
                                             </label>
