@@ -44,7 +44,7 @@ $(document).ready(function () {
                                                                 <label id="descricaoAnuncio" class="descricaoAnuncio"> ${valor[(i + 1)]}</label>
                                                             </div>
                                                             <div class="row">
-                                                                <label for="statusAnuncio" class="lblInfo"> Status: </label>
+                                                                <label for="statusAnuncio" class="lblInfo"> Condições: </label>
                                                                 <label id="statusAnuncio"> ${status}</label>
                                                             </div>
                                                         </div>
