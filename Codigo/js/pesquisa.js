@@ -14,7 +14,7 @@ $(document).ready(function () {
             let texto = '';
             let i = 0;
 
-            while (i < 2) {
+            while (i < (valor.length - 1)) {
                 texto = texto + `
                 <div class="col-md-3 divImg">
                     <a href="anuncio.php" onclick="define_anuncio('${valor[i]}')">
