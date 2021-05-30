@@ -16,3 +16,8 @@ function define_anuncio(valor) {
     document.cookie = `anuncioClicado = ${valor}`;
 };
 
+function define_proposta(valor) {
+    console.log(valor);
+    document.cookie = `propostaClicada = ${valor}`;
+};
+
