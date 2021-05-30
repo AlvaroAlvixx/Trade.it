@@ -14,26 +14,30 @@ $bairro = mysqli_real_escape_string($conexao, trim($_POST['bairro']));
 $cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
 $cep = mysqli_real_escape_string($conexao, trim($_POST['cep']));
 
-if(empty($_POST['cpf']) || empty($_POST['nome']) || empty($_POST['email'])
-|| empty($_POST['nascimento']) || empty($_POST['senha']) || empty($_POST['senhaConfirma'])
-|| empty($_POST['logradouro']) || empty($_POST['numero']) || empty($_POST['bairro'])
-|| empty($_POST['cidade']) || empty($_POST['cep'])){
-    $_SESSION['vazio'] = true;
-    header('Location: cadastrar.php');
-    exit();
-}
 
 $sql = "select count(*) as total from usuarios where email = '$email' or cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
 
-if($row['total'] == 1){
+if (strlen($cpf) != 11) {
+    $_SESSION['cpf_incorreto'] = true;
+    header('Location: ../cadastrar.php');
+    exit;
+};
+
+if (strlen($cep) != 8) {
+    $_SESSION['cep_incorreto'] = true;
+    header('Location: ../cadastrar.php');
+    exit;
+};
+
+if ($row['total'] == 1) {
     $_SESSION['usuario_existe'] = true;
     header('Location: ../cadastrar.php');
     exit;
 }
 
-if($senha != $senhaConfirma){
+if ($senha != $senhaConfirma) {
     $_SESSION['senha_incorreta'] = true;
     header('Location: ../cadastrar.php');
     exit;
@@ -42,7 +46,7 @@ if($senha != $senhaConfirma){
 $sql = "insert into usuarios values ('$cpf', '$nome', '$email', '$nascimento', '$senha',
 '$logradouro', '$numero', '$bairro', '$cidade', '$cep')";
 
-if($conexao->query($sql) === TRUE){
+if ($conexao->query($sql) === TRUE) {
     $_SESSION['status_cadastro'] = true;
 }
 
