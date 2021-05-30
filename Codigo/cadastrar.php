@@ -25,18 +25,33 @@ session_start();
     <main style="padding-top: 50px;">
         <div class="container">
             <?php
-            if (isset($_SESSION['vazio'])) :
+            if (isset($_SESSION['cpf_incorreto'])) :
             ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 divAvisoErro">
-                            <h5>Necessário preencher todos os campos.</h5>
+                            <h5>CPF inválido, tente novamente.</h5>
                         </div>
                     </div>
                 </div>
             <?php
             endif;
-            unset($_SESSION['vazio']);
+            unset($_SESSION['cpf_incorreto']);
+            ?>
+
+            <?php
+            if (isset($_SESSION['cep_incorreto'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>CEP inválido, tente novamente.</h5>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['cep_incorreto']);
             ?>
 
             <?php
