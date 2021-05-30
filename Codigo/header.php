@@ -26,10 +26,42 @@
                                     Categorias
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('games')">
+                                        Games
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('informatica')">
+                                        Informática
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('celulares')">
+                                        Celulares
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('eletronicos')">
+                                        Eletronicos
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('casa')">
+                                        Casa
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('eletrodomesticos')">
+                                        Eletrodomésticos
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('esportes')">
+                                        Esportes
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('ferramentas')">
+                                        Ferramentas
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('moda')">
+                                        Moda
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('brinquedos')">
+                                        Brinquedos
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('musica')">
+                                        Música
+                                    </a>
+                                    <a class="dropdown-item" href="pesquisa.php" onclick="define_categoria('antiguidades')">
+                                        Antiguidades
+                                    </a>
                                 </div>
                             </li>
 

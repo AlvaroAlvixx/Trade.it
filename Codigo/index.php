@@ -219,7 +219,7 @@ session_start();
                         </div>
                     </div>
                     <div class="row divTxtCategoria">
-                        <label>Músicas</label>
+                        <label>Música</label>
                     </div>
                 </div>
                 <!-- antiguidades -->
