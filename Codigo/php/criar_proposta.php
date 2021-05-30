@@ -51,7 +51,7 @@ if ($arquivoNovo[sizeof($arquivoNovo) - 1] != 'png') {
 
     mkdir($diretorio);
     echo 'Upload foi feito com sucesso!';
-    move_uploaded_file($arquivo['tmp_name'], $diretorio . "imgAnuncio.png");
+    move_uploaded_file($arquivo['tmp_name'], $diretorio . "imgProposta.png");
 
     $_SESSION['status_proposta'] = true;
     header('Location: ../nova_proposta.php');
