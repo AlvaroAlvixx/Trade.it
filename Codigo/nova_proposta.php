@@ -12,7 +12,9 @@ session_start();
     <link rel="stylesheet" href="css/style_novaProposta.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c6addf5154.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/pesquisa_dados.js"></script>
+    <script type="text/javascript" src="js/criar_proposta.js"></script>
     <title>Nova proposta - Trade.it</title>
 </head>
 
@@ -26,15 +28,36 @@ session_start();
 
                 <div class="col-12 titulo">
                     <h3>Propor troca </h3>
+
                 </div>
 
                 <div>
+                    <?php
+                    if (isset($_SESSION['imagem_errada'])) :
+                    ?>
+                        <div>
+                            <h5>Você não pode fazer upload deste tipo de arquivo.</h5>
+                        </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['imagem_errada']);
+                    ?>
+                    <?php
+                    if (isset($_SESSION['status_proposta'])) :
+                    ?>
+                        <div>
+                            <h5>Proposta enviada com sucesso.</h5>
+                        </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['status_proposta']);
+                    ?>
+                    <br>
                     <div class="col-12">
 
                         <div class="row">
                             <div class="col-12 nomeAnuncio">
-                                <h5>Anúncio: </h5>
-                                <h5 id="nomeAnuncio"></h5>
+                                <h5 id="idTitulo">Anúncio: </h5>
                             </div>
                         </div>
 
@@ -43,9 +66,9 @@ session_start();
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="descricao">
-                                            <h6>Descrição</h6>
-                                            <div id="id_descricao">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                            <h5>Descrição:</h5>
+                                            <div id="idDescricao">
+
                                             </div>
                                         </div>
                                     </div>
@@ -55,8 +78,8 @@ session_start();
                             <div class="col-2 divImagem">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card  cardGeral">
-                                            <img src="https://picsum.photos/1080" class="card-img-top" alt="...">
+                                        <div class="card  cardGeral" id="idImagem">
+
                                         </div>
                                     </div>
                                 </div>
@@ -66,22 +89,19 @@ session_start();
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 divProposta">
-                                        <h6>Fazer proposta:</h6>
+                                        <h6><b>Fazer proposta:</b></h6>
+
                                         <div class="divFazerProposta">
-                                            <form>
+                                            <form action="php/criar_proposta.php" method="post" enctype="multipart/form-data">
                                                 <div class="form-group col-12">
                                                     <label for="produto" class="lblTitulo">Produto</label>
-                                                    <input type="text" class="form-control" id="produto">
-                                                </div>
-                                                <div class="form-group col-12">
-                                                    <label for="descricao" class="lblTitulo">Condição do produto</label>
-                                                    <input type="text" class="form-control" id="descricao">
+                                                    <input type="text" class="form-control" id="produto" name="produto" required>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="row">
                                                         <div class="form-group col-8">
                                                             <label for="mensagem" class="lblTitulo">Mensagem ao ofertante</label>
-                                                            <textarea class="form-control" id="mensagem" rows="3"></textarea>
+                                                            <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required></textarea>
                                                         </div>
                                                         <div class="form-group col-4">
 
@@ -90,19 +110,19 @@ session_start();
 
 
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio" id="rdNovo" value="novo">
+                                                                    <input class="form-check-input" type="radio" name="condicoes" id="rdNovo" value="1" required>
                                                                     <label class="form-check-label" for="rdNovo">
                                                                         Novo
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio" id="rdUsadoNovo" value="usado/novo">
+                                                                    <input class="form-check-input" type="radio" name="condicoes" id="rdUsadoNovo" value="2">
                                                                     <label class="form-check-label" for="rdUsadoNovo">
                                                                         Usado (como novo)
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check disabled">
-                                                                    <input class="form-check-input" type="radio" name="radio" id="rdUsadoAceitavel" value="usado/aceitavel">
+                                                                    <input class="form-check-input" type="radio" name="condicoes" id="rdUsadoAceitavel" value="3">
                                                                     <label class="form-check-label" for="rdUsadoAceitavel">
                                                                         Usado (aceitável)
                                                                     </label>
@@ -110,16 +130,9 @@ session_start();
                                                             </fieldset>
                                                         </div>
                                                     </div>
-                                                    <div>
-                                                        <div class="col-12">
-                                                            <div class="row">
-                                                                <div class="col-4">
-                                                                    <button id="btnCarregar" type="file" class="btn btn-primary btnCarregar" multiple>Carregar foto</button>
-                                                                </div>
-                                                                <div class="col-8">
-                                                                    <label for="btnCarregar" id="lblCarregar">aaaa </label>
-                                                                </div>
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <input id="CarregarImg" type="file" name="file" required>
                                                         </div>
                                                     </div>
                                                     <div class="divBtnProposta">
@@ -145,7 +158,6 @@ session_start();
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>

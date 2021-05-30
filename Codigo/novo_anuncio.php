@@ -38,6 +38,16 @@ session_start();
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <?php
+                if (isset($_SESSION['imagem_errada'])) :
+                ?>
+                    <div>
+                        <h5>Você não pode fazer upload deste tipo de arquivo.</h5>
+                    </div>
+                <?php
+                endif;
+                unset($_SESSION['imagem_errada']);
+                ?>
+                <?php
                 if (isset($_SESSION['vazio'])) :
                 ?>
                     <div>
