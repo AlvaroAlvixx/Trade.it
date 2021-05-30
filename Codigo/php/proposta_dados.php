@@ -1,8 +1,9 @@
 <?php
 include("conexao.php");
+session_start();
 
 $imagem = $_COOKIE['propostaClicada'];
-
+$email = $_SESSION['email'];
 
 $query = "select id, produto, status, mensagem, imagens, anuncio_id from propostas where imagens = '$imagem'";
 $result = mysqli_query($conexao, $query);
@@ -23,15 +24,20 @@ $anuncioCondicao = $dados['status'];
 $anuncioImagem = $dados['imagens'];
 $ofertanteCpf = $dados['usuario_cpf'];
 
+$query = "select nome, email from usuarios where cpf = '$ofertanteCpf'";
+$result = mysqli_query($conexao, $query);
+$dados = mysqli_fetch_assoc($result);
+$ofertante = $dados['nome'];
+$ofertanteEmail = $dados['email'];
+
+if ($ofertanteEmail == $email) {
+    $_SESSION['usuario_ofertante'] = true;
+}
+
 $query = "select usuario_cpf from criar_proposta where proposta_id = '$propostaId'";
 $result = mysqli_query($conexao, $query);
 $dados = mysqli_fetch_assoc($result);
 $interessadoCpf = $dados['usuario_cpf'];
-
-$query = "select nome from usuarios where cpf = '$ofertanteCpf'";
-$result = mysqli_query($conexao, $query);
-$dados = mysqli_fetch_assoc($result);
-$ofertante = $dados['nome'];
 
 $query = "select nome from usuarios where cpf = '$interessadoCpf'";
 $result = mysqli_query($conexao, $query);
