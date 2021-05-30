@@ -21,8 +21,6 @@ $cat[10] = mysqli_real_escape_string($conexao, trim($_POST['musica']));
 $cat[11] = mysqli_real_escape_string($conexao, trim($_POST['antiguidades']));
 $status = mysqli_real_escape_string($conexao, trim($_POST['status']));
 $categorias = "";
-$arquivo = $_FILES['file'];
-$arquivoNovo = explode('.', $arquivo['name']);
 
 for ($i = 0; $i < 12; $i++) {
     if ($cat[$i] != "") {
@@ -40,7 +38,9 @@ $arquivo = $_FILES['file'];
 $arquivoNovo = explode('.', $arquivo['name']);
 
 if ($arquivoNovo[sizeof($arquivoNovo) - 1] != 'png') {
-    die('Você não pode fazer upload deste tipo de arquivo');
+    $_SESSION['imagem_errada'] = true;
+    header('Location: ../novo_anuncio.php');
+    exit;
 } else {
 
     $email = $_SESSION['email'];
@@ -61,7 +61,7 @@ if ($arquivoNovo[sizeof($arquivoNovo) - 1] != 'png') {
     $id = $aux['id'];
     echo $id;
 
-    $diretorio = "img/anuncios/" . $id . "/";
+    $diretorio = "../img/anuncios/" . $id . "/";
     $imagens = "img/anuncios/" . $id . "/imgAnuncio.png";
     $sql = "update anuncios set imagens = '$imagens' where id = '$id'";
     $result = mysqli_query($conexao, $sql);
