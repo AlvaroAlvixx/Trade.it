@@ -28,7 +28,7 @@ session_start();
             <div class="row divConteudo">
 
                 <div class="col-12 titulo">
-                    <h3>Proposta de troca</h3>
+                    <h3>Proposta de troca </h3>
                 </div>
 
                 <div>
@@ -118,15 +118,14 @@ session_start();
                                     </div>
                                 </div>
 
-
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="divBotoesResponderProposta">
-                                            <button id="btnRecusarProposta" type="submit" class="btn btn-danger btnRecusar">Recusar</button>
-                                            <button id="btnAceitarProposta" type="submit" class="btn btn-success btnAceitar">Aceitar</button>
+                                        <div class="divBotoesResponderProposta" id="divOfertante">
+
                                         </div>
                                     </div>
                                 </div>
+
                             </fieldset>
 
                         </div>
