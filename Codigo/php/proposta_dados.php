@@ -31,7 +31,9 @@ $ofertante = $dados['nome'];
 $ofertanteEmail = $dados['email'];
 
 if ($ofertanteEmail == $email) {
-    $_SESSION['usuario_ofertante'] = true;
+    $usuario_ofertante = true;
+} else {
+    $usuario_ofertante = false;
 }
 
 $query = "select usuario_cpf from criar_proposta where proposta_id = '$propostaId'";
@@ -45,5 +47,5 @@ $dados = mysqli_fetch_assoc($result);
 $interessado = $dados['nome'];
 
 $tudo = $anuncioTitulo . "|" . $ofertante . "|" . $anuncioCondicao . "|" . $anuncioDescricao . "|" . $anuncioImagem . "|"
-    . $interessado . "|" . $produto . "|" . $condicao . "|" . $mensagem . "|" . $propostaImg . "|";
+    . $interessado . "|" . $produto . "|" . $condicao . "|" . $mensagem . "|" . $propostaImg . "|" . $usuario_ofertante;
 echo $tudo;
