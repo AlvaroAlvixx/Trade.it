@@ -51,7 +51,7 @@ if ($arquivoNovo[sizeof($arquivoNovo) - 1] != 'png') {
     echo $ofertante;
 
     $sql = "insert into anuncios values (default, '$titulo', '$descricao', '$interesses', 
-    '$categorias', 'diretorio', '$status', '$ofertante')";
+    '$categorias', 'diretorio', '1', '$status', '$ofertante')";
 
     $result = mysqli_query($conexao, $sql);
 

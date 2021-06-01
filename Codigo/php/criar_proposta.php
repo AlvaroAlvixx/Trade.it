@@ -31,7 +31,7 @@ if ($arquivoNovo[sizeof($arquivoNovo) - 1] != 'png') {
     $anuncio = $aux['id'];
 
     $sql = "insert into propostas values (default, '$produto', '$mensagem', 'diretorio', 
-    '$condicoes', '$ofertante', '1', '$anuncio')";
+    '1', '$condicoes', '$ofertante', '1', '$anuncio')";
     $result = mysqli_query($conexao, $sql);
 
     $sql = "select id from propostas where produto = '$produto' and usuario_cpf = '$ofertante'";
