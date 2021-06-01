@@ -11,14 +11,22 @@ $(document).ready(function () {
 
             let texto = '';
             let i = 0;
-            let status = "";
+            let condicao = "";
+            let statusNome = ""
             while (i < (valor.length - 1)) {
                 if ((valor[i + 2]) == 1)
-                    status = "Novo";
+                    condicao = "Novo";
                 else if ((valor[i + 2]) == 2)
-                    status = "Usado (Como Novo)";
+                    condicao = "Usado (Como Novo)";
                 else
-                    status = "Usado (Aceitável)";
+                    condicao = "Usado (Aceitável)";
+
+                if ((valor[i + 4]) == 1)
+                    statusNome = "Aberto";
+                else
+                    statusNome = "Finalizado";
+
+
 
                 texto = texto + `
                 <fieldset class="fieldsetAnuncio">
@@ -45,7 +53,11 @@ $(document).ready(function () {
                                                             </div>
                                                             <div class="row">
                                                                 <label for="statusAnuncio" class="lblInfo"> Condições: </label>
-                                                                <label id="statusAnuncio"> ${status}</label>
+                                                                <label id="statusAnuncio"> ${condicao}</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label for="statusAnuncio" class="lblInfo"> Status do Anúncio: </label>
+                                                                <label id="statusAnuncio"> ${statusNome}</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -67,7 +79,7 @@ $(document).ready(function () {
                             </fieldset>`
 
                 $("#meusAnuncios").html(texto);
-                i = i + 4;
+                i = i + 5;
             }
         }
 

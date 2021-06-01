@@ -4,7 +4,7 @@ $(document).ready(function () {
         console.log(retornou);
 
         if (retornou == "") {
-            $("#minhasPropostas").html("Nenhum anúncio encontrado");
+            $("#minhasPropostas").html("Nenhuma proposta encontrado");
         } else {
 
             let valor = []
@@ -39,7 +39,7 @@ $(document).ready(function () {
                                     </div>
                                     <div class="row">
                                         <label for="status" class="lblInfo"> Status: </label>
-                                        <label id="status"></label>
+                                        <label id="status">${valor[i + 3]}</label>
                                     </div>
                                 </div >
                             </div >
@@ -60,7 +60,7 @@ $(document).ready(function () {
                             </fieldset >
                     `
                 $("#minhasPropostas").html(texto);
-                i = i + 3;
+                i = i + 4;
             }
         }
 

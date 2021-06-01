@@ -38,16 +38,23 @@ $(document).ready(function () {
         let interesses = (valor[2]);
         let imagens = (valor[3]);
         let status = (valor[4]);
-        let condicoes = "";
+        let condicao = (valor[5]);
+        let statusNome = "";
 
-        if (status == "1")
+        if (condicao == "1")
             condicoes = "Novo";
-        else if (status == "2")
+        else if (condicao == "2")
             condicoes = "Usado (Como Novo)";
         else
             condicoes = "Usado (Aceitável)";
 
+        if (status == "1")
+            statusNome = "Aberto";
+        else
+            statusNome = "Finalizado";
+
         $("#id_titulo").html(`<h4>${titulo}</h4>`);
+        $("#id_status").html(statusNome);
         $("#id_interesses").html(interesses);
         $("#id_condicao").html(condicoes);
         $("#id_descricao").html(descricao);

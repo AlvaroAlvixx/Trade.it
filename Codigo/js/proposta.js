@@ -46,6 +46,35 @@ $(document).ready(function () {
         $("#mensagemProposta").html(mensagemProposta);
         $("#imgProposta").html(`<img src="${imgProposta}" class="card-img-top"></img>`);
 
+        let usuario_ofertante = (valor[10]);
+
+        if (usuario_ofertante == true) {
+            $("#divOfertante").html(`
+            <button id="btnRecusarProposta" type="submit" class="btn btn-danger btnRecusar">Recusar</button>
+            <button id="btnAceitarProposta" type="submit" class="btn btn-success btnAceitar">Aceitar</button>`);
+        }
+
+        let status_Anuncio = (valor[11]);
+        let status_Proposta = (valor[12]);
+        let statusNome_Anuncio = "";
+        let statusNome_Proposta = "";
+
+        if (status_Anuncio == "1")
+            statusNome_Anuncio = "Aberto";
+        else
+            statusNome_Anuncio = "Finalizado";
+
+        if (status_Proposta == "1")
+            statusNome_Proposta = "Em negociação";
+        else if (status_Proposta == "2")
+            statusNome_Proposta = "Finalizada";
+        else
+            statusNome_Proposta = "Cancelada";
+
+        $("#statusAnuncio").html(statusNome_Anuncio);
+        $("#statusProposta").html(statusNome_Proposta);
+
+
 
 
     });
