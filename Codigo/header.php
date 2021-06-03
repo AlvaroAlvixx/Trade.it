@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/style.css">
 <header>
     <div class="row">
         <div class="col-12">
@@ -7,7 +8,7 @@
                 </div>
                 <div class="col-6 divSearch">
                     <input class="inputSearch form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" onclick="define_pesquisa()"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 btnPesquisar" onclick="define_pesquisa()"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="col-3 divSlogan">
                     <h4>Aqui a catira é livre!</h4>

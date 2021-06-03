@@ -20,10 +20,18 @@ session_start();
 <body>
     <?php include("header.php"); ?>
 
-    <main style="padding-top: 50px;">
-        <div class="container">
-            <form action="php/login.php" method="POST">
-                <div class="divCadastro">
+    <main>
+        <div class="container containerEntrar">
+            <div>
+                <div class="col-12 titulo">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Entrar</h3>                            
+                        </div> 
+                    </div>
+                </div>
+
+                <form action="php/login.php" method="POST">                   
                     <div class="form-row">
                         <div class="col-md-3"></div>
                         <div class="form-group col-md-6">
@@ -39,23 +47,21 @@ session_start();
                             <input name="senha" type="password" class="form-control" id="inputSenha" required>
                         </div>
                         <div class="col-md-3"> </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-row">
-                        <div class="col-md-5"></div>
-                        <div class="form-group col-md-2 btnLogin">
-                            <button type="submit" class="btn btn-primary">Entrar</button>
-                        </div>
-                        <div class="col-md-5"></div>
-                    </div>
+                    </div>                                           
+                    <div class="form-group divBtnLogin">
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </div> 
 
                     <?php
                     if (isset($_SESSION['nao_autenticado'])) :
                     ?>
-                        <div>
-                            <h5>Email ou senha inválidos.</h5>
-                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 divAvisoErro">
+                                    <h5>Email ou senha inválidos.</h5>
+                                </div>
+                            </div>
+                        </div>                        
                     <?php
                     endif;
                     unset($_SESSION['nao_autenticado']);
@@ -64,20 +70,23 @@ session_start();
                     <?php
                     if (isset($_SESSION['vazio'])) :
                     ?>
-                        <div>
-                            <h5>Necessário preencher todos os campos.</h5>
-                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 divAvisoErro">
+                                    <h5>Necessário preencher todos os campos.</h5>
+                                </div>
+                            </div>
+                        </div>                        
                     <?php
                     endif;
                     unset($_SESSION['vazio']);
-                    ?>
-
-                </div>
-            </form>
+                    ?>                  
+                </form>
+            </div>
         </div>
     </main>
 
-    <footer style="position: absolute !important; bottom: 0 !important; width: 100% !important;">
+    <footer>
         <div class="row">
             <div class="col-12">
                 <b>Trade.IT - Todos os direitos reservados - 2021</b>

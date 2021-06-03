@@ -29,8 +29,7 @@ session_start();
                 <div class="col-12 titulo">
                     <div class="row">
                         <div class="col-10">
-                            <h3>Meus anúncios</h3>
-                            <h3 id="nomeAnuncio"></h3>
+                            <h3>Meus anúncios</h3>                            
                         </div>
 
                         <div class="col-2 divBtnNovo">

@@ -28,8 +28,7 @@ session_start();
 			<div class="row divConteudo">
 
 				<div class="col-12 titulo">
-					<h3>Minhas propostas</h3>
-					<h3 id="nomeAnuncio"></h3>
+					<h3>Minhas propostas</h3>					
 				</div>
 
 				<div class="col-12">
