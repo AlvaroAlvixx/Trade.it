@@ -64,8 +64,9 @@ $(document).ready(function () {
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <div class="row">
+                                                    <div class="row">                                                     
                                                         <div class="divBtnExcluir">
+                                                            <button id="btnVisualizarAnuncio" type="submit" class="btn btn-primary btnVisualizarAnuncio">Visualizar</button>
                                                             <button id="btnExcluirAnuncio" type="submit" class="btn btn-primary btnExcluirAnuncio">Excluir</button>
                                                         </div>
                                                     </div>
