@@ -79,6 +79,12 @@ main{
     margin-left: auto;
 }
 
+.btnVisualizarAnuncio{
+    background: rgb(51, 51, 51) !important;
+    color: white !important;
+	border: none !important;
+}
+
 .btnExcluirAnuncio{	
     background: rgb(51, 51, 51) !important;
     color: white !important;
