@@ -8,10 +8,11 @@ $result = mysqli_query($conexao, $query);
 $valor = mysqli_fetch_assoc($result);
 $cpf = $valor['cpf'];
 
+$i = 0;
 $query = "select proposta_id from criar_proposta where usuario_cpf = '$cpf'";
 $result = mysqli_query($conexao, $query);
 if (($result) and ($result->num_rows != 0)) {
-    for ($i = 0; $row = mysqli_fetch_assoc($result); $i++) {
+    for ($i; $row = mysqli_fetch_assoc($result); $i++) {
         $propostas[$i] =  $row['proposta_id'];
     }
 }
@@ -26,6 +27,7 @@ if (($result) and ($result->num_rows != 0)) {
 
 if ($propostas[0] == "") {
     echo "";
+    exit();
 }
 
 $tudo = "";

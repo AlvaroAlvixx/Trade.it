@@ -92,7 +92,7 @@ footer{
 }
 
 .carousel-item img{
-    filter: brightness(50%);
+    filter: brightness(90%);
     border-radius: 5px;
 }
 

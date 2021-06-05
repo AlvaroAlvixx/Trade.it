@@ -32,7 +32,7 @@ $(document).ready(function () {
                 <fieldset class="fieldsetAnuncio">
                                 <div class="row">
                                     <div class="col-12">
-                                    <a href="anuncio.php" onclick="define_anuncio('${valor[(i + 3)]}')">
+                                    
                                         <div class="row">
                                             <div class="col-2 divImagem">
                                                 <div class="imagem">
@@ -66,15 +66,16 @@ $(document).ready(function () {
                                                 <div class="col-12">
                                                     <div class="row">                                                     
                                                         <div class="divBtnExcluir">
+                                                        <a href="anuncio.php" onclick="define_anuncio('${valor[(i + 3)]}')">
                                                             <button id="btnVisualizarAnuncio" type="submit" class="btn btn-primary btnVisualizarAnuncio">Visualizar</button>
-                                                            <button id="btnExcluirAnuncio" type="submit" class="btn btn-primary btnExcluirAnuncio">Excluir</button>
-                                                        </div>
+                                                        </a>
+                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </div>
-                                    </a>
+                                    
                                     </div>
                                 </div>
                             </fieldset>`

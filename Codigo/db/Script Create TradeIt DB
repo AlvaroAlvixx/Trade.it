@@ -1,0 +1,136 @@
+create database tradeit
+default character set utf8
+default collate utf8_general_ci;
+
+use tradeit;
+drop database tradeit;
+
+create table usuarios(
+	cpf varchar(11) not null,
+	nome varchar(30) not null,
+	email varchar(30) not null unique,
+	nascimento date not null,
+	senha varchar(32) not null,
+	logradouro varchar(50) not null,
+	numero tinyint(5) not null,
+	bairro varchar(30) not null,
+	cidade varchar(20) not null,
+	cep varchar(8) not null,
+	primary key(cpf)
+) default charset = utf8;
+
+create table admins(
+	id int not null auto_increment,
+	nome varchar(30) not null,
+	email varchar(30) not null,
+	senha varchar(30) not null,
+	primary key(id)
+) default charset = utf8;
+
+create table anuncios(
+	id int not null auto_increment,
+	titulo varchar(50) not null,
+	descricao text not null,
+	interesses text not null,
+	categorias varchar(50) not null,
+	imagens varchar(50),
+	status tinyint(1),
+	condicao tinyint(1),
+	usuario_cpf varchar(11) not null,
+	primary key(id),
+	foreign key(usuario_cpf) references usuarios(cpf)
+) default charset = utf8; 
+
+create table propostas(
+	id int not null auto_increment,
+	produto varchar(50) not null,
+	mensagem text not null,
+	imagens varchar(50),
+	status tinyint(1),
+	condicao tinyint(1),
+	usuario_cpf varchar(11) not null,
+	admin_id int not null,
+	anuncio_id int not null,
+	primary key(id),
+	foreign key(usuario_cpf) references usuarios(cpf),
+	foreign key(admin_id) references admins(id),
+	foreign key(anuncio_id) references anuncios(id)
+) default charset = utf8;
+
+create table criar_proposta(
+	usuario_cpf varchar(11) not null,
+	proposta_id int not null,
+	foreign key(usuario_cpf) references usuarios(cpf),
+	foreign key(proposta_id) references propostas(id)
+)default charset = utf8;
+
+create table mensagens(
+	id int not null auto_increment,
+	texto text not null,
+	usuario_cpf_1 varchar(11) not null,
+	usuario_cpf_2 varchar(11) not null,
+	primary key(id),
+	foreign key(usuario_cpf_1) references usuarios(cpf),
+	foreign key(usuario_cpf_2) references usuarios(cpf)
+) default charset = utf8;
+
+insert into admins values
+(default, 'Admin', 'admin@trade.it', 'admin123');
+
+
+/* Auxilio */
+
+select * from usuarios;
+select * from anuncios;
+select * from propostas;
+select * from admins;
+select * from mensagens;
+select * from criar_proposta;
+
+drop table propostas; 
+drop table admins;
+
+select propostas.produto, anuncios.titulo from propostas 
+    join anuncios
+    on propostas.anuncio_id = anuncios.id
+   and propostas.id = '1';
+
+/* Anúncio e Ofertante */
+select anuncios.titulo as Anúncio, usuarios.nome as Ofertante
+from anuncios join usuarios 
+on anuncios.usuario_cpf = usuarios.cpf;
+
+/* Proposta e Interessado */
+select propostas.produto as Proposta, 
+(select nome from usuarios where cpf = interessado.usuario_cpf) as Interessado
+from propostas join criar_proposta as interessado
+on propostas.id = interessado.proposta_id;
+
+/* Anuncio e Proposta*/
+select anuncios.titulo, propostas.produto from anuncios
+join propostas
+on propostas.anuncio_id = anuncios.id;
+
+/* Anuncio, Ofertante, Proposta e Interessado */
+select anuncios.titulo as Anúncio, ofertante.nome as Ofertante, propostas.produto as Proposta, 
+(select nome from usuarios where cpf = interessado.usuario_cpf) as Interessado
+from anuncios 
+join usuarios as ofertante on anuncios.usuario_cpf = ofertante.cpf
+join propostas on propostas.anuncio_id = anuncios.id
+join criar_proposta as interessado on propostas.id = interessado.proposta_id;
+
+/* Anúncio, Proposta, Mensagem, Remetente, Destinatario */
+select 
+(select titulo from anuncios where usuario_cpf = anuncios.usuario_cpf) as Anúncio,
+propostas.produto as Proposta,
+mensagens.texto as Mensagem, 
+(select nome from usuarios where cpf = mensagens.usuario_cpf_1) as Remetente, 
+(select nome from usuarios where cpf = mensagens.usuario_cpf_2) as Destinatário
+from mensagens
+join propostas on propostas.usuario_cpf = mensagens.usuario_cpf_1 
+or propostas.usuario_cpf = mensagens.usuario_cpf_2
+join anuncios on anuncios.usuario_cpf = propostas.usuario_cpf;
+
+
+
+
