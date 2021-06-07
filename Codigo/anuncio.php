@@ -94,7 +94,7 @@ session_start();
 
                         <div class="col-4 divBtnTrocar">
                             <form action="nova_proposta.php">
-                                <button id="btnTrocar" type="submit" class="btn btn-primary btnNovoAnuncio">Propor troca</button>
+                                <button id="btnTrocar" type="submit" class="btn btn-primary btnTrocar">Propor troca</button>
                             </form>
                         </div>
                     </div>
