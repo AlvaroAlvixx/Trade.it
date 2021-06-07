@@ -3,7 +3,6 @@ default character set utf8
 default collate utf8_general_ci;
 
 use tradeit;
-drop database tradeit;
 
 create table usuarios(
 	cpf varchar(11) not null,
@@ -86,9 +85,6 @@ select * from propostas;
 select * from admins;
 select * from mensagens;
 select * from criar_proposta;
-
-drop table propostas; 
-drop table admins;
 
 select propostas.produto, anuncios.titulo from propostas 
     join anuncios
