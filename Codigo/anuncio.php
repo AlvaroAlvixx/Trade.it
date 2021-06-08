@@ -60,6 +60,12 @@ session_start();
 
                                         </div>
                                     </div>
+                                    <div class="interesse">
+                                        <h6>Ofertante: </h6>
+                                        <div id="id_ofertante">
+
+                                        </div>
+                                    </div>
                                     <div class="calcularCep">
                                         <h6>Calcular frete: </h6>
                                         <div class="col-12">
@@ -93,8 +99,8 @@ session_start();
                         </div>
 
                         <div class="col-4 divBtnTrocar">
-                            <form action="nova_proposta.php">
-                                <button id="btnTrocar" type="submit" class="btn btn-primary btnTrocar">Propor troca</button>
+                            <form action="nova_proposta.php" id="btn_troca">
+
                             </form>
                         </div>
                     </div>

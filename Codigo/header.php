@@ -66,6 +66,12 @@
                                 </div>
                             </li>
 
+                            <?php if (isset($_SESSION['admin'])) : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="minhas_propostas.php">Avaliar propostas <span class="sr-only"></span></a>
+                                </li>
+                            <?php endif; ?>
+
                             <?php if (isset($_SESSION['email'])) : ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="meus_anuncios.php">Meus anúncios <span class="sr-only"></span></a>
@@ -82,17 +88,27 @@
                                 </li>
                             <?php endif; ?>
 
+
+
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
-                            <?php if (isset($_SESSION['email'])) : ?>
+                            <?php if (isset($_SESSION['admin'])) : ?>
                                 <p class="logado">
-                                    <?php echo ($_SESSION['email']); ?>
+                                    <?php echo ($_SESSION['admin']); ?>
                                 </p>
                                 <a class="nav-link" href="php/logout.php">Sair<span class="sr-only"></span></a>
                             <?php else : ?>
-                                <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
-                                <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
+                                <?php if (isset($_SESSION['email'])) : ?>
+                                    <p class="logado">
+                                        <?php echo ($_SESSION['email']); ?>
+                                    </p>
+                                    <a class="nav-link" href="php/logout.php">Sair<span class="sr-only"></span></a>
+                                <?php else : ?>
+                                    <a class="nav-link" href="entrar.php">Entrar<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="cadastrar.php">Cadastrar<span class="sr-only"></span></a>
+                                <?php endif; ?>
                             <?php endif; ?>
+
                         </form>
                     </div>
                 </nav>
