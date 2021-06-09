@@ -50,8 +50,8 @@ $(document).ready(function () {
 
         if (usuario_ofertante == true) {
             $("#divOfertante").html(`
-            <button id="btnRecusarProposta" type="submit" class="btn btn-danger btnRecusar">Recusar</button>
-            <button id="btnAceitarProposta" type="submit" class="btn btn-success btnAceitar">Aceitar</button>`);
+            <button id="btnRecusarProposta" type="submit" class="btn btn-danger btnRecusar" onclick="define_status(3)">Recusar</button>
+            <button id="btnAceitarProposta" type="submit" class="btn btn-success btnAceitar" onclick="define_status(2)">Aceitar </button>`);
         }
 
         let status_Anuncio = (valor[11]);
@@ -67,17 +67,49 @@ $(document).ready(function () {
         if (status_Proposta == "1")
             statusNome_Proposta = "Em negociação";
         else if (status_Proposta == "2")
-            statusNome_Proposta = "Finalizada";
+            statusNome_Proposta = "Aceita";
+        else if (status_Proposta == "3")
+            statusNome_Proposta = "Recusada";
+        else if (status_Proposta == "4")
+            statusNome_Proposta = "Em análise pelo Trade.it";
+        else if (status_Proposta == "5")
+            statusNome_Proposta = "Reprovada pelo Trade.it";
         else
-            statusNome_Proposta = "Cancelada";
+            statusNome_Proposta = "Aprovada pelo Trade.it";
 
         $("#statusAnuncio").html(statusNome_Anuncio);
         $("#statusProposta").html(statusNome_Proposta);
 
-
-
-
+        let usuario_admin = (valor[13]);
+        if (usuario_admin != "") {
+            $("#divMenuAdmin").html(`<fieldset class="fieldsetMenuAdm" id="divMenuAdmin">
+        
+                <div class="row">
+                    <div class="col-12">
+                        <p class="tituloMenuAdm">Menu administrador</p>
+                    </div>
+                </div>
+                <div class="row divBtnMenuAdmin">
+                    <button id="btnMenuAdminAnalise" type="submit" class="btn btn-warning btnMenuAdmin" onclick="define_status(4)">Em análise</button>
+                </div>
+                <div class="row divBtnMenuAdmin">
+                    <button id="btnMenuAdminReprovado" type="submit" class="btn btn-danger btnMenuAdmin" onclick="define_status(5)">Reprovada</button>
+                </div>
+                <div class="row divBtnMenuAdmin">
+                    <button id="btnMenuAdminAprovado" type="submit" class="btn btn-success btnMenuAdmin" onclick="define_status(6)">Aprovada</button>
+                </div>
+            
+        </fieldset>`);
+        }
     });
-
-
 });
+function define_status(valor) {
+    console.log("Status: " + valor);
+    document.cookie = `statusClicado = ${valor}`;
+
+    $.post('php/proposta_status.php', function (retorna) {
+        let retornou = retorna;
+        console.log("Id: " + retornou); 3
+        location.reload();
+    });
+};
