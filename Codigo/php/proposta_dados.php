@@ -48,6 +48,12 @@ $result = mysqli_query($conexao, $query);
 $dados = mysqli_fetch_assoc($result);
 $interessado = $dados['nome'];
 
+$usuario_admin = "";
+if (isset($_SESSION['admin'])) {
+    $usuario_admin = $_SESSION['admin'];
+}
+
 $tudo = $anuncioTitulo . "|" . $ofertante . "|" . $anuncioCondicao . "|" . $anuncioDescricao . "|" . $anuncioImagem . "|"
-    . $interessado . "|" . $produto . "|" . $condicao . "|" . $mensagem . "|" . $propostaImg . "|" . $usuario_ofertante . "|" . $statusAnuncio . "|" . $statusProposta;
+    . $interessado . "|" . $produto . "|" . $condicao . "|" . $mensagem . "|" . $propostaImg . "|" . $usuario_ofertante . "|" . $statusAnuncio . "|" . $statusProposta
+    . "|" . $usuario_admin;
 echo $tudo;
