@@ -31,7 +31,6 @@ session_start();
                     <h3>Proposta de troca </h3>
                 </div>
 
-
                 <div class="col-12 nomeAnuncio">
                     <div class="row rowNomeAnuncio">
                         <h5><b> Anúncio: &nbsp</b></h5>
@@ -136,11 +135,36 @@ session_start();
                         </fieldset>
 
                     </div>
-                </div>
+                    <div class="col-12 divInfoProposta">
+                        <br> <br>
+                        <fieldset class="fieldsetProposta">
+                            <legend>
+                                <h6> Chat</h6>
+                            </legend>
 
+                            <div class="row">
+                                <div class="col-12 divInformacaoPrposta" id="chat">
+
+                                </div>
+                            </div>
+
+                            <form action="php/chat.php" method="post" class="formNovoAnuncio">
+                                <div class="form-group">
+                                    <label>Mensagem</label>
+                                    <textarea class="form-control" name="mensagem" rows="3" required></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 divBtnCriar">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </fieldset>
+                    </div>
+                </div>
             </div>
 
-        </div>
         </div>
 
     </main>
