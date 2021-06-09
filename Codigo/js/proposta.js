@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.post('php/proposta_dados.php', function (retorna) {
         let retornou = retorna;
-        console.log(retornou);
+        //console.log(retornou);
 
         let valor = [];
         valor = (retornou.split("|"));
@@ -102,6 +102,34 @@ $(document).ready(function () {
         </fieldset>`);
         }
     });
+
+    $.post('php/chat_dados.php', function (retorna) {
+        let retornou = retorna;
+
+        if (retornou == "") {
+            //$("#minhasPropostas").html("Nenhuma proposta encontrado");
+            console.log("nada");
+        } else {
+
+            let valor = []
+            valor = (retornou.split("|"));
+
+            let texto = '';
+            let i = 0;
+
+            while (i < (valor.length - 1)) {
+                texto = texto + `<div class="row">
+                        <p class="topicosProposta">${valor[(i)]}: </p>
+                        <p id="statusProposta"> ${valor[(i + 1)]} </p>
+                    </div>`
+
+                i = i + 2;
+            }
+            $("#chat").html(texto);
+
+        }
+
+    });
 });
 function define_status(valor) {
     console.log("Status: " + valor);
@@ -109,7 +137,7 @@ function define_status(valor) {
 
     $.post('php/proposta_status.php', function (retorna) {
         let retornou = retorna;
-        console.log("Id: " + retornou); 3
+        console.log("Id: " + retornou);
         location.reload();
     });
 };
