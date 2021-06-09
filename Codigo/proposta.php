@@ -31,125 +31,113 @@ session_start();
                     <h3>Proposta de troca </h3>
                 </div>
 
-                
-                    <div class="col-12 nomeAnuncio">                        
-                        <div class="row rowNomeAnuncio">                            
-                            <h5><b> Anúncio: &nbsp</b></h5>
-                            <h5 id="anuncioTitulo"> </h5>                            
-                        </div>
 
-                        <div class="row">
-                            <div class="col-10 divInformacaoAnuncio ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="descricao">
-                                            <div class="row">
-                                                <p class="topicosProposta"> Ofertante: &nbsp</p>
-                                                <p id="ofertanteAnuncio"></p>
-                                            </div>
-                                            <div class="row">
-                                                <p class="topicosProposta"> Condição do Produto: &nbsp</p>
-                                                <p id="condicaoAnuncio"></p>
-                                            </div>
-                                            <div class="row">
-                                                <p class="topicosProposta"> Descrição: &nbsp</p>
-                                                <p id="descricaoAnuncio"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-12 nomeAnuncio">
+                    <div class="row rowNomeAnuncio">
+                        <h5><b> Anúncio: &nbsp</b></h5>
+                        <h5 id="anuncioTitulo"> </h5>
+                    </div>
 
-                            </div>
-                            <div class="col-2 divImagem">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card cardGeral" id="imgAnuncio">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 divInfoProposta">
-                            <br> <br>
-                            <fieldset class="fieldsetProposta">
-                                <legend>
-                                    <h6> Proposta</h6>
-                                </legend>
-
-                                <div class="row">
-                                    <div class="col-8 divInformacaoPrposta" id="informacoesProposta">
+                    <div class="row">
+                        <div class="col-10 divInformacaoAnuncio ">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="descricao">
                                         <div class="row">
                                             <p class="topicosProposta"> Status: &nbsp</p>
-                                            <p id="statusProposta"></p>
+                                            <p id="statusAnuncio"></p>
                                         </div>
                                         <br>
                                         <div class="row">
-                                            <p class="topicosProposta">Interessado: &nbsp</p>
-                                            <p id="interessado"></p>
+                                            <p class="topicosProposta"> Ofertante: &nbsp</p>
+                                            <p id="ofertanteAnuncio"></p>
                                         </div>
                                         <div class="row">
-                                            <p class="topicosProposta">Produto oferecido: &nbsp</p>
-                                            <p id="produtoProposta"></p>
+                                            <p class="topicosProposta"> Condição do Produto: &nbsp</p>
+                                            <p id="condicaoAnuncio"></p>
                                         </div>
                                         <div class="row">
-                                            <p class="topicosProposta">Condição do produto: &nbsp</p>
-                                            <p id="condicaoProposta"></p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="topicosProposta">Mensagem: &nbsp</p>
-                                            <p id="mensagemProposta"></p>
+                                            <p class="topicosProposta"> Descrição: &nbsp</p>
+                                            <p id="descricaoAnuncio"></p>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="col-2 divMenuAdmin">
-                                        <fieldset class="fieldsetMenuAdm">
-                                            <form >
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <p class="tituloMenuAdm">Menu administrador</p>
-                                                    </div>                                                
-                                                </div>
-                                                <div class="row divBtnMenuAdmin">
-                                                    <button id="btnMenuAdminAnalise" type="submit" class="btn btn-warning btnMenuAdmin">Em análise</button>
-                                                </div>  
-                                                <div class="row divBtnMenuAdmin">
-                                                    <button id="btnMenuAdminReprovado" type="submit" class="btn btn-danger btnMenuAdmin">Reprovado</button>
-                                                </div>    
-                                                <div class="row divBtnMenuAdmin">
-                                                    <button id="btnMenuAdminAprovado" type="submit" class="btn btn-success btnMenuAdmin">Aprovado</button>
-                                                </div>   
-                                            </form>  
-                                        </fieldset>
-                                                                                                              
+                        </div>
+                        <div class="col-2 divImagem">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card cardGeral" id="imgAnuncio">
+
                                     </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                    <div class="col-2 divImagem">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card cardGeral" id="imgProposta">
+                    </div>
 
-                                                </div>
+                    <div class="col-12 divInfoProposta">
+                        <br> <br>
+                        <fieldset class="fieldsetProposta">
+                            <legend>
+                                <h6> Proposta</h6>
+                            </legend>
+
+                            <div class="row">
+                                <div class="col-8 divInformacaoPrposta" id="informacoesProposta">
+                                    <div class="row">
+                                        <p class="topicosProposta"> Status: &nbsp</p>
+                                        <p id="statusProposta"></p>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <p class="topicosProposta">Produto oferecido: &nbsp</p>
+                                        <p id="produtoProposta"></p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="topicosProposta">Interessado: &nbsp</p>
+                                        <p id="interessado"></p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="topicosProposta">Condição do produto: &nbsp</p>
+                                        <p id="condicaoProposta"></p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="topicosProposta">Mensagem: &nbsp</p>
+                                        <p id="mensagemProposta"></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-2 divMenuAdmin" id="divMenuAdmin">
+
+
+                                </div>
+
+                                <div class="col-2 divImagem">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card cardGeral" id="imgProposta">
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="divBotoesResponderProposta" id="divOfertante">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="divBotoesResponderProposta" id="divOfertante">
 
-                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                            </fieldset>
+                        </fieldset>
 
-                        </div>
                     </div>
-                
+                </div>
+
             </div>
 
         </div>
