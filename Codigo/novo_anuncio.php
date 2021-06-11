@@ -23,55 +23,68 @@ session_start();
 
     <?php include("header.php"); ?>
 
-    <main class="container" style="padding-top: 50px;">       
+    <main class="container mainGeral">
+        <?php
+            if (isset($_SESSION['imagem_errada'])) :
+            ?>                    
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Você não pode fazer upload deste tipo de arquivo.</h5>
+                        </div>
+                    </div>                        
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['imagem_errada']);
+            ?>
+            <?php
+            if (isset($_SESSION['vazio'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Escolha pelo menos uma categoria.</h5>
+                        </div>
+                    </div>                        
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['vazio']);
+        ?>
+
+        <?php
+            if (isset($_SESSION['status_anuncio'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoSucesso">
+                            <h5>Anúncio criado com sucesso.</h5>
+                        </div>
+                    </div>                        
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['status_anuncio']);
+            ?><?php
+            if (isset($_SESSION['status_anuncio'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoSucesso">
+                            <h5>Anúncio criado com sucesso.</h5>
+                        </div>
+                    </div>                        
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['status_anuncio']);
+        ?>       
 
         <div class="areaGeral row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <?php
-                if (isset($_SESSION['imagem_errada'])) :
-                ?>                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoErro">
-                                <h5>Você não pode fazer upload deste tipo de arquivo.</h5>
-                            </div>
-                        </div>                        
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['imagem_errada']);
-                ?>
-                <?php
-                if (isset($_SESSION['vazio'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoErro">
-                                <h5>Escolha pelo menos uma categoria.</h5>
-                            </div>
-                        </div>                        
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['vazio']);
-                ?>
-
-                <?php
-                if (isset($_SESSION['status_anuncio'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoSucesso">
-                                <h5>Anúncio criado com sucesso.</h5>
-                            </div>
-                        </div>                        
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['status_anuncio']);
-                ?>
-
+                
                 <div class="col-12 titulo">
                     <div class="row">
                         <div class="col-12">
