@@ -23,6 +23,34 @@ session_start();
     <?php include("header.php"); ?>
 
     <main>
+        <?php
+            if (isset($_SESSION['imagem_errada'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Você não pode fazer upload deste tipo de arquivo.</h5>
+                        </div>
+                    </div>                        
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['imagem_errada']);
+            ?>
+            <?php
+            if (isset($_SESSION['status_proposta'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoSucesso">
+                            <h5>Proposta enviada com sucesso.</h5>
+                        </div>
+                    </div>                        
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['status_proposta']);
+        ?>
         <div class="container divNovaProposta">
             <div class="row divConteudo">
 
@@ -32,26 +60,6 @@ session_start();
                 </div>
 
                 <div>
-                    <?php
-                    if (isset($_SESSION['imagem_errada'])) :
-                    ?>
-                        <div>
-                            <h5>Você não pode fazer upload deste tipo de arquivo.</h5>
-                        </div>
-                    <?php
-                    endif;
-                    unset($_SESSION['imagem_errada']);
-                    ?>
-                    <?php
-                    if (isset($_SESSION['status_proposta'])) :
-                    ?>
-                        <div>
-                            <h5>Proposta enviada com sucesso.</h5>
-                        </div>
-                    <?php
-                    endif;
-                    unset($_SESSION['status_proposta']);
-                    ?>
                     <br>
                     <div class="col-12">
 
