@@ -23,83 +23,82 @@ session_start();
     <?php include("header.php"); ?>
 
     <main>
+        <?php
+            if (isset($_SESSION['cpf_incorreto'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>CPF inválido, tente novamente.</h5>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['cpf_incorreto']);
+            ?>
+
+            <?php
+            if (isset($_SESSION['cep_incorreto'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>CEP inválido, tente novamente.</h5>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['cep_incorreto']);
+            ?>
+
+            <?php
+            if (isset($_SESSION['senha_incorreta'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Senhas estão divergentes.</h5>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['senha_incorreta']);
+            ?>
+
+            <?php
+            if (isset($_SESSION['usuario_existe'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Usuário já cadastrado.</h5>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['usuario_existe']);
+            ?>
+
+            <?php
+            if (isset($_SESSION['status_cadastro'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoSucesso">
+                            <h5>Cadastro realizado com sucesso.</h5>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+            unset($_SESSION['status_cadastro']);
+        ?>
         <div class="container containerCadastrar">
             <div>
-                <?php
-                if (isset($_SESSION['cpf_incorreto'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoErro">
-                                <h5>CPF inválido, tente novamente.</h5>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['cpf_incorreto']);
-                ?>
-
-                <?php
-                if (isset($_SESSION['cep_incorreto'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoErro">
-                                <h5>CEP inválido, tente novamente.</h5>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['cep_incorreto']);
-                ?>
-
-                <?php
-                if (isset($_SESSION['senha_incorreta'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoErro">
-                                <h5>Senhas estão divergentes.</h5>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['senha_incorreta']);
-                ?>
-
-                <?php
-                if (isset($_SESSION['usuario_existe'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoErro">
-                                <h5>Usuário já cadastrado.</h5>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['usuario_existe']);
-                ?>
-
-                <?php
-                if (isset($_SESSION['status_cadastro'])) :
-                ?>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 divAvisoSucesso">
-                                <h5>Cadastro realizado com sucesso.</h5>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endif;
-                unset($_SESSION['status_cadastro']);
-                ?>
-
                 <div class="col-12 titulo">
                     <div class="row">
                         <div class="col-12">

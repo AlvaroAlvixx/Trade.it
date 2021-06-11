@@ -21,7 +21,36 @@ session_start();
     <?php include("header.php"); ?>
 
     <main>
-        <div class="container containerEntrar">
+        <?php
+            if (isset($_SESSION['nao_autenticado'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Email ou senha inválidos.</h5>
+                        </div>
+                    </div>
+                </div>                        
+            <?php
+            endif;
+            unset($_SESSION['nao_autenticado']);
+            ?>
+
+            <?php
+            if (isset($_SESSION['vazio'])) :
+            ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 divAvisoErro">
+                            <h5>Necessário preencher todos os campos.</h5>
+                        </div>
+                    </div>
+                </div>                        
+            <?php
+            endif;
+            unset($_SESSION['vazio']);
+        ?>
+        <div class="container containerEntrar">              
             <div>
                 <div class="col-12 titulo">
                     <div class="row">
@@ -50,37 +79,7 @@ session_start();
                     </div>                                           
                     <div class="form-group divBtnLogin">
                         <button type="submit" class="btn btn-primary">Entrar</button>
-                    </div> 
-
-                    <?php
-                    if (isset($_SESSION['nao_autenticado'])) :
-                    ?>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 divAvisoErro">
-                                    <h5>Email ou senha inválidos.</h5>
-                                </div>
-                            </div>
-                        </div>                        
-                    <?php
-                    endif;
-                    unset($_SESSION['nao_autenticado']);
-                    ?>
-
-                    <?php
-                    if (isset($_SESSION['vazio'])) :
-                    ?>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 divAvisoErro">
-                                    <h5>Necessário preencher todos os campos.</h5>
-                                </div>
-                            </div>
-                        </div>                        
-                    <?php
-                    endif;
-                    unset($_SESSION['vazio']);
-                    ?>                  
+                    </div>     
                 </form>
             </div>
         </div>
