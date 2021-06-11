@@ -5,6 +5,7 @@ body{
 header{
     background-color: rgb(51, 51, 51);
     padding: 15px;
+    margin-bottom: 20px;
 }
 
 fieldset{
@@ -117,7 +118,7 @@ footer{
 .divCategorias{
     background-color: white !important;
     border-radius: 5px;
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -160,6 +161,7 @@ footer{
 footer{
     bottom: 0;
     width: 100%;
+    margin-top: 20px;
 }
   
 footer b{
@@ -182,6 +184,7 @@ footer b{
     background-color:  #E7E7E7 !important;
     margin-top: 10px;
     margin-bottom: 30px;
+    border-radius: 5px;
 }
 
 .titulo h3{
@@ -194,27 +197,7 @@ footer b{
     border-radius: 5px;    
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 20px;
-}
 
-.divAvisoErro{
-    background-color: red;
-    color: white;
-}
-
-.divAvisoErro h5{
-    margin: 0px !important;
-    padding: 10px;
-}
-
-.divAvisoSucesso{
-    background-color: green;
-    color: white;
-}
-
-.divAvisoErro h5{
-    margin: 0px !important;
-    padding: 10px;
 }
 
 .divBtnCadastrar{
@@ -251,7 +234,29 @@ footer b{
     background-color: white !important;
     border-radius: 5px;    
     padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 20px;
-    
+    padding-bottom: 10px;    
+}
+
+/*ELMENTOS DE ERROS*/
+
+.divAvisoErro{
+    background-color: rgb(214, 89, 89) !important;
+    border-radius: 5px !important;
+    color: white !important;
+}
+
+.divAvisoErro h5{
+    margin: 0px !important;
+    padding: 10px;
+}
+
+.divAvisoSucesso{
+    background-color: #37a937;
+    border-radius: 5px !important;
+    color: white;
+}
+
+.divAvisoSucesso h5{
+    margin: 0px !important;
+    padding: 10px;
 }

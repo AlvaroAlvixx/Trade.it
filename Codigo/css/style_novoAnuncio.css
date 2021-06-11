@@ -1,6 +1,10 @@
 .areaGeral{
     background-color: rgb(250, 249, 249);
-    padding-top: 25px;
+    padding: 0 !important;
+}
+
+.container{
+    padding: 0 !important;
 }
 
 .areaGeral label{
