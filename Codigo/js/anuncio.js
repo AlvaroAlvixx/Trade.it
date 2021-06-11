@@ -66,7 +66,7 @@ $(document).ready(function () {
         $("#id_ofertante").html(nomeOfertante);
 
         if (logado != "" && logado != emailOfertante) {
-            $("#btn_troca").html(`<button id="btnTrocar" type="submit" class="btn btn-primary btnNovoAnuncio">Propor troca</button>`);
+            $("#btn_troca").html(`<button id="btnTrocar" type="submit" class="btn btn-primary btnTrocar">Propor troca</button>`);
         }
     });
 });

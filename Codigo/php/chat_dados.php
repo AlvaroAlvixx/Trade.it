@@ -2,6 +2,12 @@
 include("conexao.php");
 session_start();
 
+$email = $_SESSION['email'];
+$query = "select nome from usuarios where email = '$email'";
+$result = mysqli_query($conexao, $query);
+$dados = mysqli_fetch_assoc($result);
+$nome = $dados['nome'];
+
 $imagem = $_COOKIE['propostaClicada'];
 $query = "select id from propostas where imagens = '$imagem'";
 $result = mysqli_query($conexao, $query);
@@ -41,5 +47,5 @@ if (($result) and ($result->num_rows != 0)) {
     }
 }
 
-echo $tudo;
+echo $nome . "|" . $tudo;
 exit;

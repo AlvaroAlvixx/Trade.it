@@ -133,32 +133,45 @@ session_start();
                             </div>
 
                         </fieldset>
-
                     </div>
-                    <div class="col-12 divInfoProposta">
+
+                    <!-- CHAT -->
+                    <div class="col-12">
                         <br> <br>
-                        <fieldset class="fieldsetProposta">
+                        <fieldset class="fieldsetChat">
                             <legend>
                                 <h6> Chat</h6>
                             </legend>
 
                             <div class="row">
-                                <div class="col-12 divInformacaoPrposta" id="chat">
+                                <div class="col-12 divChat" id="chat">
 
                                 </div>
                             </div>
 
-                            <form action="php/chat.php" method="post" class="formNovoAnuncio">
-                                <div class="form-group">
-                                    <label>Mensagem</label>
-                                    <textarea class="form-control" name="mensagem" rows="3" required></textarea>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form action="php/chat.php" method="post">                                        
+                                            <div class="row">
+                                                <div class="col-10">  
+                                                    <div class="row">
+                                                        <div class="col-12 form-group divTextArea">
+                                                            <textarea class="form-control" name="mensagem" rows="3" placeholder="Mensagem" required></textarea>
+                                                        </div>
+                                                    </div>    
+                                                </div>                                        
+                                                <div class="col-2 divColBotao"> 
+                                                        <button type="submit" class="btn btn-primary btnEnviarMensagem">Enviar</button>
+                                                </div>
+                                            </div>
+                                    </form>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12 divBtnCriar">
-                                        <button type="submit" class="btn btn-primary">Enviar</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+                            
+                               
+                            
+                               
+                            
 
                         </fieldset>
                     </div>

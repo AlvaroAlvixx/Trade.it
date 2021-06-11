@@ -66,8 +66,11 @@ session_start();
                         <h4>Destaques</h4>
                     </div>
 
-                    <div id="divDestaque" class="row divDestaque">
+                    <div class="col-12">
+                        <div id="divDestaque" class="row divDestaque">
+                            
 
+                        </div>
                     </div>
                 </div>
             </div>

@@ -117,9 +117,12 @@ session_start();
                     <div class="col-12">
                         <h4>Destaques</h4>
                     </div>
+                    
+                    <div class="col-12">
+                        <div id="divDestaque" class="row divDestaque">
+                            
 
-                    <div id="divDestaque" class="row divDestaque">
-
+                        </div>
                     </div>
                 </div>
             </div>

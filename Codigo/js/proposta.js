@@ -115,13 +115,33 @@ $(document).ready(function () {
             valor = (retornou.split("|"));
 
             let texto = '';
-            let i = 0;
+            let i = 1;            
+            
+            let user = valor[0];
 
             while (i < (valor.length - 1)) {
-                texto = texto + `<div class="row">
-                        <p class="topicosProposta">${valor[(i)]}: </p>
-                        <p id="statusProposta"> ${valor[(i + 1)]} </p>
+                if(user == valor[i]){
+                    texto = texto + 
+                    `<div class="row">
+                        <div class="col-10 ">
+                            <div class="mensagemLogado">
+                                <p class="txtLogado">&nbsp ${valor[(i + 1)]}</p>
+                                <p class="topicosProposta txtLogado">${valor[(i)]}: </p>
+                            </div>
+                            
+                        </div>                       
                     </div>`
+                }
+                else{
+                    texto = texto + 
+                    `<div class="row">
+                        <div class="col-10 mensagemOutros">
+                            <p class="topicosProposta txtOutros">${valor[(i)]}</p>
+                            <p class="txtOutros"> &nbsp ${valor[(i + 1)]} </p>
+                        </div>
+                        
+                    </div>`
+                }               
 
                 i = i + 2;
             }
