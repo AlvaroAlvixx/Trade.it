@@ -152,7 +152,7 @@ session_start();
                             <div class="row">
                                 <div class="col-12">
                                     <form action="php/chat.php" method="post">                                        
-                                            <div class="row">
+                                            <div class="row divChatInputs">
                                                 <div class="col-10">  
                                                     <div class="row">
                                                         <div class="col-12 form-group divTextArea">
