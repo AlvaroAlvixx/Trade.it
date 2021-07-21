@@ -17,7 +17,7 @@ O objetivo do projeto Trade.it é elaborar um sistema e-commerce de trocas, foca
 
 ## Instruções de instalação
 
-* XAMPP (mySQL e PHP)
+* Necessário instalar o XAMPP (MySQL e PHP)
 * Criar o banco de dados conforme no arquivo "Script Create TradeIt DB.txt", presente na pasta "Código/db"
 * Colocar o projeto na pasta "/htdocs" no diretório do XAMPP.
 
